@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check consent method – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+        Check consent method
+        </h1>
+
+        <p>
+          Go to the <a href="///">Ecctis portal</a> to check which method of consent is required for the qualifications you need to verify. 
+          Return to this page and select 'continue' to upload the necessary documents.
+        </p>
+
+        <h2 class="govuk-heading-m">Qualification(s) requiring consent</h2>
+
+        <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-4">
+          <li>BA Maths (Lahore University)</li>
+          <li>Teaching qualifications (Accra University)</li>
+        </ul>
+
+
+      
+            
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                href:"qual1-select"
+              }) }}
+            
+              <a class="govuk-link" href="#">Cancel</a>
+
+          
+        
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}

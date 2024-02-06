@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+Manage applications for QTS
+</h1>
+
+<p>
+  Apply for QTS - internal-facing service
+</p>
+
+<h2 class="govuk-heading-m">Prototypes Index</h2>
+       
+<table class="govuk-table">
+  
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+     
+      <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Date</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+     
+      <td class="govuk-table__cell">
+        <p>Consent journey</p>
+        <p><a href="verification/verification-overview">Quals verification redesign</a></p>
+        
+      </td>
+      <td class="govuk-table__cell">February 2024</td>
+    </tr>
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell">xxx
+      <br>
+      <br>
+      xxxx
+      </td>
+      <td class="govuk-table__cell">date 2023</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

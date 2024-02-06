@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Select consent letter type – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+        <h1 class="govuk-heading-xl">
+        Select consent method
+        </h1>
+
+        <h2 class="govuk-heading-m govuk-!-padding-bottom-4">
+          Consent required for Teaching qualification (Accra University)
+          </h2>
+        
+
+        <div class="govuk-form-group">
+          <form action="verification-overview-2" method="post" novalidate>
+            <fieldset class="govuk-fieldset">
+              
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="consent-sent" name="consent-sent" type="radio" value="institution-letter">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                    Institution's custom consent letter
+                  </label>
+                  <div id="consent-sent-item-hint" class="govuk-hint govuk-radios__hint">
+                    Get a copy from Ecctis and upload it here.
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="consent-sent-2" name="consent-sent" type="radio" value="ecctis-letter">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                    ECCTIS standard consent letter with signature
+                  </label>
+                  <div id="sconsent-sent-item-hint" class="govuk-hint govuk-radios__hint">
+                    Get a copy from Ecctis and upload it here.
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="consent-sent-3" name="consent-sent" type="radio" value="tra-letter">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                    Non-signed TRA consent letter
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Generate and save PDF.
+                  </div>
+                </div>
+                
+            </fieldset>
+            </div>
+
+
+            
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+            
+              <a class="govuk-link" href="#">Cancel</a>
+          </form>
+        
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}
