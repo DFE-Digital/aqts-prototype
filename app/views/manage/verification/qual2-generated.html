@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="consent-sent-confirmation-qual2" method="post" novalidate>
+      <h1 class="govuk-heading-xl">
+        Teaching qualifications (Accra University)
+        </h1>
+
+            <p class="govuk-body">Generate the TRA PDF below and save it. Go to the Request Ecctis verification task for this qualification to upload the PDF.</p>
+            
+            
+            <div class="govuk-inset-text" style="background-color: #f3f2f1">
+              <button type="submit" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+                Generate consent letter
+              </button>
+            </div>
+
+            {{ govukCheckboxes({
+              name: "download",
+              classes: "govuk-checkboxes--small",
+              items: [
+                {
+                  value: "downloaded",
+                  text: "I have generated and downloaded the consent letter"
+                }
+              ]
+            }) }}
+     
+
+          
+        <div class="govuk-button-group">
+                {{ govukButton({
+                  text: "Continue"
+                }) }}
+              
+          <a class="govuk-link" href="#">Cancel</a>
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}

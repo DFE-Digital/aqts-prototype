@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Send for review</h1>
+      <form action="////" method="post" novalidate>
+
+     
+
+      <div class="govuk-body">
+        You have opted to send this qualification's consent request for review.
+      </div>
+
+  
+      
+      {{ govukTextarea ({
+        id: "refs-review",
+        name: "refs-review",
+        rows: 5,
+            label: {
+                text: "Internal note: briefly explain to the assessor why you are sending this for review."
+            }
+        }) 
+        }}
+
+    
+       
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+                <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+            </div>
+        </form>
+  
+  
+
+       
+
+    </div>
+</div>
+{% endblock %}

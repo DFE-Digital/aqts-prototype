@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="verification-overview-3" method="post" novalidate>
+
+      <h1 class="govuk-heading-xl">
+        Upload consent letter
+        </h1>
+
+        <h2 class="govuk-heading-m">BA Maths (Lahore University)</h2>
+        
+        <p class="govuk-body">You have chosen to upload the institution's custom consent letter.</p>
+
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            </h1>
+            <div id="file-upload-1-hint" class="govuk-hint">
+              You must upload the file as a PDF.
+            </div>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+          </div>
+        
+        </div>
+
+            
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+        
+          <a class="govuk-link" href="#">Cancel</a>
+      </form>
+    
+    </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}

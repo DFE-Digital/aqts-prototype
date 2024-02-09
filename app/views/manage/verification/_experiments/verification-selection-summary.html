@@ -1,0 +1,98 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Verification requests
+          </h1>
+        
+          <p class="govuk-body govuk-!-padding-bottom-3">
+            You have selected the following consent types:
+          </p>
+
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                BA Maths (Lahore University)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Institution's custom consent letter
+              </dd>
+              <dd class="govuk-summary-list__actions" dd style="vertical-align: middle;">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Teaching qualification (Accra University)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Non-signed TRA consent letter
+              </dd>
+              <dd class="govuk-summary-list__actions" dd style="vertical-align: middle;">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+
+
+            
+          </dl>
+
+          <div class="govuk-!-padding-bottom-3"></div>
+
+       
+
+
+        <form action="verification-overview-2" method="post">
+
+         <button class="govuk-button" data-module="govuk-button">
+          Confirm
+          </button>
+
+
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}

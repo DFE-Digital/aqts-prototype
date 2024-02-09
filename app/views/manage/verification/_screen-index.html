@@ -1,0 +1,267 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Screen index – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    
+    <h1 class="govuk-heading-xl">
+        Screen index
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Verification consent journey redesign
+    </h2>
+
+    <p>February 2024</p>
+
+   
+
+    <h2 class="govuk-heading-s">
+     Stage: selecting consent type
+    </h3>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+          <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-two-thirds">Description</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="verification-overview">Verification overview</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>Mixed types of consent: 1 signed, 1 non-signed</p>
+            <p>New task lists, new layout, new content</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="check-consent-method">Check consent method</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>The existing screen.</p>
+            <p><a href="check-consent-method-with-comment">The same screen with assessor comment</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="qual1-select">Select consent method (1/2)</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>Updated content</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="qual2-select">Select consent method (2/2)</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>Updated content</p>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+ 
+
+    <h2 class="govuk-heading-s">
+      Stage: written consent tasks - all tasks up to 'send consent to applicant'
+     </h3>
+     <table class="govuk-table">
+       <thead class="govuk-table__head">
+         <tr class="govuk-table__row">
+           <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+           <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-two-thirds">Description</th>
+         </tr>
+       </thead>
+       <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="verification-overview-2">Verification overview</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>Mixed types of consent: 1 signed, 1 non-signed</p>
+            <p>"Check and select" task displays as completed, screen now shows task lists for both types of consent letters.</p>
+          </p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="qual1-upload">Upload written consent letter</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>Updated content: changed headings</p>
+          </td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="verification-overview-3">Verification overview</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>Mixed types of consent: 1 signed, 1 non-signed</p>
+            <p>"Upload consent document" task displays as completed.</p>
+          </p>
+          </td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="qual1-send-email">Send consent to applicant</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>The existing screen.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="verification-overview-4">Verification overview</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>Mixed types of consent: 1 signed, 1 non-signed</p>
+            <p>"Send consent document to applicant" task displays as completed.</p>
+            <p>"Record applicant response" displays as waiting on.</p>
+          </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+        <h2 class="govuk-heading-s">
+          Stage: written consent tasks - applicant response received
+         </h3>
+         <table class="govuk-table">
+           <thead class="govuk-table__head">
+             <tr class="govuk-table__row">
+               <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+               <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-two-thirds">Description</th>
+             </tr>
+           </thead>
+           <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="verification-overview-received">Verification overview</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>Mixed types of consent: 1 signed, 1 non-signed</p>
+            <p>"Record applicant response" task displays as received.</p>
+            </td>
+        </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <p><a href="qual1-record-applicant-response">Record applicant response</a></p>
+              </td>
+              <td class="govuk-table__cell">
+                <p>Updated screen</p>
+                <p>Shows convert to pdf functionality</p>
+               
+              </td>
+            </tr>
+    
+    
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <p><a href="qual1-send-consent-for-review">Send consent for review</a></p>
+              </td>
+              <td class="govuk-table__cell">
+                <p>Content updated to be in line with same screen for LoPS.</p>
+                <p>Used if consent doc is not valid.</p>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <p><a href="verification-overview-valid-consent">Verification overview</a></p>
+              </td>
+              <td class="govuk-table__cell">
+                <p>Mixed types of consent: 1 signed, 1 non-signed</p>
+                <p>"Record applicant response" task displays as completed. Request Ecctis shows as not started.</p>
+              </td>
+            </tr>
+
+      </tbody>
+      </table>
+   
+      <h2 class="govuk-heading-s">
+        Stage: written consent tasks - Ecctis tasks
+       </h3>
+       <table class="govuk-table">
+         <thead class="govuk-table__head">
+           <tr class="govuk-table__row">
+             <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+             <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-two-thirds">Description</th>
+           </tr>
+         </thead>
+         <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <p><a href="qual1-request-ecctis">Request Ecctis verification</a></p>
+        </td>
+        <td class="govuk-table__cell">
+          <p>The existing screen</p>
+          </td>
+      </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <p><a href="verification-overview-ecctis-requested">Verification overview</a></p>
+            </td>
+            <td class="govuk-table__cell">
+              <p>Mixed types of consent: 1 signed, 1 non-signed</p>
+              <p>"Request Ecctis verification" task displays as completed. "Record Ecctis response" shows as waiting on.</p>
+             
+            </td>
+          </tr>
+
+    </tbody>
+    </table>
+
+
+      
+
+    
+    </div>
+</div>
+
+{% endblock %}
