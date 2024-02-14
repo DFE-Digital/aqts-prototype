@@ -26,6 +26,9 @@ text: "Sign out"
 }) }}
 {% endblock %}
 
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
 
 {% block content %}
 
@@ -33,17 +36,17 @@ text: "Sign out"
     <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-xl">
-            Send consent to applicant
+            Send consent document to applicant
         </h1>
 
 
-        <p class="govuk-body">You need to email the applicant to request a signature for:</p>
+        <p class="govuk-body">You need to request a signature for the uploaded consent documents for:</p>
 
         <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-3">
             <li><b>BA Maths (Lahore University)</b></li>
           </ul>
 
-        <p>Select 'Continue' to automatically send the email and uploaded consent documents.</p> 
+        <p>Select 'Continue' to automatically send an email and the uploaded consent documents to the applicant. </p> 
 
         
         <div class="govuk-!-padding-top-3">
