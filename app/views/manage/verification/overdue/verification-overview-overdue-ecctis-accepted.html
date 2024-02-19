@@ -1,0 +1,200 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+  
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <h1 class="govuk-heading-xl">Verify qualifications</h1>
+    
+        <h2 class="govuk-heading-m">All qualifications</h2>
+
+         <p>
+            Complete the following tasks for each qualification.
+        </p>
+
+
+    </div>
+    <div class="govuk-grid-column-full-from-desktop">
+        <ol class="app-task-list">
+            <li>
+               
+
+                <ul class="app-task-list__items" style="padding-left: 0;">
+
+                <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                        <a href="check-consent-method" aria-describedby="consent-sent">
+                            Check and select consent method
+                        </a>
+                    </span>
+                    <strong class="govuk-tag app-task-list__tag"
+                        id="consent-sent-tra">Completed</strong>
+                </li>
+                </ul>
+            
+            </li>
+        </ol>
+   
+
+
+        <h2 class="govuk-heading-m">Qualification specific</h2>
+
+        <p>As you have to verify more than one qualification you will need to complete specific tasks for each one.</p>
+
+
+    <h3 class="govuk-heading-s">BA Maths (Lahore University)</h3>
+    <ol class="app-task-list">
+        <li>
+           
+
+            <ul class="app-task-list__items" style="padding-left: 0;">
+
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                    <a href="qual1-upload" aria-describedby="consent-sent">
+                        Upload consent document
+                    </a>
+                </span>
+                <strong class="govuk-tag app-task-list__tag"
+                id="consent-sent-tra">Completed</strong>
+            </li>
+
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                    <a href="qual1-send-email" aria-describedby="consent-sent">
+                        Send consent document to applicant
+                    </a>
+                </span>
+
+                
+                <strong class="govuk-tag app-task-list__tag"
+                    id="consent-sent-tra">Completed</strong>
+
+               
+               
+            </li>
+
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                    <a href="qual1-record-applicant-response" aria-describedby="consent-sent">
+                        Record applicant response
+                    </a>
+                </span>
+                <strong class="govuk-tag app-task-list__tag"
+                id="consent-sent-tra">Completed</strong>
+            </li>
+
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                    <a href="qual1-request-ecctis" aria-describedby="consent-sent">
+                        Request Ecctis verification
+                    </a>
+                </span>
+                <strong class="govuk-tag app-task-list__tag"
+                id="consent-sent-tra">Completed</strong>
+            </li>
+
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                    <a href="qual1-record-ecctis-response" aria-describedby="consent-sent">
+                       Record Ecctis response
+                    </a>
+                </span>
+                <strong class="govuk-tag app-task-list__tag"
+                id="consent-sent-tra">Completed</strong>
+            </li>
+
+
+            </ul>
+        
+        </li>
+    </ol>
+
+
+    <h3 class="govuk-heading-s">Teaching qualification (Accra University)</h3>
+    <ol class="app-task-list">
+        <li>
+           
+
+            <ul class="app-task-list__items" style="padding-left: 0;">
+
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                    <a href="check-consent-method" aria-describedby="consent-sent">
+                        Generate consent document
+                    </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag"
+                    id="consent-sent-tra">Not started</strong>
+            </li>
+
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                    <a href="check-consent-method" aria-describedby="consent-sent">
+                        Request Ecctis verification
+                    </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag"
+                    id="consent-sent-tra">Cannot start</strong>
+            </li>
+
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                    <a href="check-consent-method" aria-describedby="consent-sent">
+                       Record Ecctis response
+                    </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag"
+                id="consent-sent-tra">Cannot start</strong>
+            </li>
+
+
+            </ul>
+        
+        </li>
+    </ol>
+
+ </div>
+    <div class="govuk-grid-column-two-thirds">
+
+
+    <a href="../overview-start.html" class="govuk-button govuk-link govuk-link--no-visited-state">Back to overview</a>
+    </div>
+</div>
+
+{% endblock %}
+

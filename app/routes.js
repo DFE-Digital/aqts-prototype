@@ -19,3 +19,16 @@ const router = govukPrototypeKit.requests.setupRouter()
             response.redirect("manage/verification/qual1-send-consent-for-review")
         }
     })
+
+    // Ecctis overdue qual 1
+    router.post('/ecctis-overdue-qual1', function(request, response) {
+
+        var ecctisOverdue = request.session.data['ecctis-overdue']
+        if (ecctisOverdue == "received-valid"){
+            response.redirect("manage/verification/overdue/verification-overview-overdue-ecctis-accepted")
+        } else if (ecctisOverdue == "received-invalid") {
+            response.redirect("manage/verification/overdue/qual1-send-ecctis-for-review")
+        } else {
+            response.redirect("manage/verification/overdue/qual1-send-ecctis-for-review")
+        }
+    })
