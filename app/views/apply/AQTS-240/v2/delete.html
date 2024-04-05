@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Apply for qualified teacher status (QTS) in England",
+serviceUrl: "start.html",
+navigation: [
+{
+href: "signed-out",
+text: "Sign out",
+active: false
+}
+]
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+Delete file – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">A suspected virus has been detected in passportcopy.jpg. Delete it and upload a new file.</h1>
+
+
+		<form class="form" action="upload-id2" method="post">
+
+			<button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+				Delete file
+			  </button>
+
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

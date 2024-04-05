@@ -32,3 +32,16 @@ const router = govukPrototypeKit.requests.setupRouter()
             response.redirect("manage/verification/overdue/qual1-send-ecctis-for-review")
         }
     })
+
+
+    // Virus scanner upload another id doc
+    router.post('/virus-scanner-another', function(request, response) {
+
+        var v2another = request.session.data['v2-another-identification']
+        if (v2another == "yes"){
+            response.redirect("apply/AQTS-240/v2/upload-id3")
+        } 
+         else {
+            response.redirect("apply/AQTS-240/v2/task-list-error")
+        }
+    })

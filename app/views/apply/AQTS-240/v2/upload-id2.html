@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Apply for qualified teacher status (QTS) in England",
+serviceUrl: "start.html",
+navigation: [
+{
+href: "signed-out",
+text: "Sign out",
+active: false
+}
+]
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+Check your uploaded files – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<div class="govuk-error-summary" data-module="govuk-error-summary">
+			<div role="alert">
+			  <h2 class="govuk-error-summary__title">
+				There is a problem
+			  </h2>
+			  <div class="govuk-error-summary__body">
+				<ul class="govuk-list govuk-error-summary__list">
+				  <li>
+					<a href="#">The selected file contains a suspected virus. Delete it and upload a new file.
+						<br></p></a>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+
+		<h1 class="govuk-heading-l">Check your uploaded files</h1>
+
+		<h2 class="govuk-heading-m">Files added</h2>
+
+		<dl class="govuk-summary-list">
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					File 1
+				</dt>
+
+				<dd class="govuk-summary-list__value">
+					
+					<div class="govuk-form-group govuk-form-group--error">
+						
+					<p><strong>passportcopy.jpg</strong></p>
+
+						
+						<p id="full-name-input-error" class="govuk-error-message">
+							<span class="govuk-visually-hidden">Error:</span> The selected file contains a suspected virus. Delete it and upload a new file.
+						  <br></p>
+					
+				</dd>
+
+		
+
+				<dd class="govuk-summary-list__actions">
+
+					<a class="govuk-link" href="#">
+						Delete<span class="govuk-visually-hidden"> file 1</span>
+					</a>
+				</dd>
+			</div>
+
+
+			
+		</dl>
+
+
+		<form class="form" action="/virus-scanner-another" method="post">
+
+			{{ govukRadios({
+			name: "v2-another-identification",
+			fieldset: {
+			legend: {
+			text: "Do you need to upload another page?",
+			classes: "govuk-fieldset__legend--m"
+			}
+			},
+			hint: {
+			text: "If your ID document has several pages, you can upload them here. Otherwise, select ‘No’ and then
+			‘Continue’."
+			},
+			items: [
+			{
+			value: "yes",
+			text: "Yes"
+			},
+			{
+			value: "no",
+			text: "No"
+			}
+			]
+			}) }}
+
+			{{ govukButton({ text: 'Continue' }) }}
+		</form>
+	</div>
+</div>
+
+{% endblock %}
