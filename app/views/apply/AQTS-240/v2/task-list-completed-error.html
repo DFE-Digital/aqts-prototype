@@ -1,0 +1,177 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Apply for qualified teacher status (QTS) in England",
+serviceUrl: "start.html",
+navigation: [
+{
+href: "signed-out",
+text: "Sign out",
+active: false
+}
+]
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<div class="govuk-error-summary" data-module="govuk-error-summary">
+			<div role="alert">
+			  <h2 class="govuk-error-summary__title">
+				There is a problem
+			  </h2>
+			  <div class="govuk-error-summary__body">
+				<ul class="govuk-list govuk-error-summary__list">
+				  <li>
+					<a href="#">A selected file in "About you" contains a suspected virus. Remove it and upload a new file.
+						</a>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+
+		<h1 class="govuk-heading-xl">
+			Apply for qualified teacher status (QTS)
+		</h1>
+
+		<ol class="app-task-list">
+			<li>
+				<h2 class="app-task-list__section">
+					About you
+				</h2>
+				<ul class="app-task-list__items">
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="personal-information/name-and-dob" aria-describedby="personal-information">
+                  Enter your personal information
+                </a>
+              </span>
+						
+						<strong class="govuk-tag app-task-list__tag" id="personal-details-status">Completed</strong>
+						
+					</li>
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="upload-id1" aria-describedby="personal-details">
+                  Upload your identity document
+                </a>
+              </span>
+						
+						<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="another-identification-status">Error</strong>
+					
+					</li>
+				</ul>
+			</li>
+			<li>
+				<h2 class="app-task-list__section">
+					Your qualifications
+				</h2>
+				<ul class="app-task-list__items">
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="qualifications/teacher-training-qualification/teacher-training-qualification"
+                   aria-describedby="teacher-training-qualification">
+                  Add your teaching qualifications
+                </a>
+              </span>
+			  <strong class="govuk-tag app-task-list__tag" id="personal-details-status">Completed</strong>
+					</li>
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="who-you-can-teach/age-range" aria-describedby="age-range">
+                  Enter the age range you can teach
+                </a>
+              </span>
+			  <strong class="govuk-tag app-task-list__tag" id="personal-details-status">Completed</strong>
+					</li>
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="who-you-can-teach/subjects" aria-describedby="teachable-subjects">
+                Enter the subjects you can teach
+              </a>
+              </span><strong class="govuk-tag app-task-list__tag" id="personal-details-status">Completed</strong>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<h2 class="app-task-list__section">
+					Your English language proficiency
+				</h2>
+				<ul class="app-task-list__items">
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="english-language-proficiency/question-born-citizenship"
+                   aria-describedby="verify-english-proficiency">
+                  Verify your English language proficiency
+                </a>
+              </span>
+			  <strong class="govuk-tag app-task-list__tag" id="personal-details-status">Completed</strong>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<h2 class="app-task-list__section">
+					Your work history
+				</h2>
+				<ul class="app-task-list__items">
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="work-history/work-history-in-education-1" aria-describedby="work-history">
+                Add your work history
+              </a>
+              </span>
+			  <strong class="govuk-tag app-task-list__tag" id="personal-details-status">Completed</strong>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<h2 class="app-task-list__section">
+					Proof that you’re recognised as a teacher
+				</h2>
+				<ul class="app-task-list__items">
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="professional-standing/question-reference-number" aria-describedby="reference-number">
+                Enter your reference number
+              </a>
+              </span>
+			  <strong class="govuk-tag app-task-list__tag" id="personal-details-status">Completed</strong>
+					</li>
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="professional-standing/upload-lops" aria-describedby="professional-standing">
+                Upload your written statement
+              </a>
+              </span>
+			  <strong class="govuk-tag app-task-list__tag" id="personal-details-status">Completed</strong>
+					</li>
+				</ul>
+			</li>
+
+			<p class="govuk-body">You cannot submit your application until all errors have been fixed.</p>
+
+			<div class="govuk-button-group">
+				<button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
+					Check your application
+				  </button>
+				<a class="govuk-button govuk-button--secondary" href="signed-out">Save and sign out</a>
+			</div>
+
+		</ol>
+	</div>
+</div>
+
+{% endblock %}
