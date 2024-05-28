@@ -1,0 +1,1051 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check qualifications – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+            <h1 class="govuk-heading-xl">Check qualifications</h1>
+            
+            <div class="govuk-inset-text">
+                <h2 class="govuk-heading-s">Eligibility criteria for this country has changed.</h2>
+                <p>
+                    You must assess this application based on the eligibility criteria in place on the date it was submitted. 
+                </p>
+              </div>
+     
+        <div class="govuk-accordion govuk-!-padding-top-4" data-module="govuk-accordion"
+             id="accordion-default">
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button"
+              id="accordion-default-heading-1">
+          Qualifications
+        </span>
+                    </h2>
+                </div>
+                <div id="accordion-default-content-1"
+                     class="govuk-accordion__section-content"
+                     aria-labelledby="accordion-default-heading-1">
+                    <div class="govuk-summary-list__card">
+                        <div class="govuk-summary-list__card-title-wrapper">
+                            <h2 class="govuk-summary-list__card-title">Your
+                                teaching qualification</h2>
+                        </div>
+                        <div class="govuk-summary-list__card-content">
+                            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                <!-- Teacher training qualification -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Qualification title
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        {{ data['applicant_1'] ['qualification']
+                                        ['qualification-1']
+                                        ['qualification-title'] }}
+                                    </dd>
+                                </div>
+
+                                <!-- Teacher training qualification institution -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Institution name
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        {{ data['applicant_1'] ['qualification']
+                                        ['qualification-1']
+                                        ['qualificationInstitutionName'] }}
+                                    </dd>
+                                </div>
+
+                                <!-- Teacher training qualification country -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Country of school
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        {{ data['applicant_1'] ['qualification']
+                                        ['qualification-1']
+                                        ['qualification-institution-country'] }}
+                                    </dd>
+                                </div>
+
+                                <!-- Teacher training qualification start date -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Start date
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        <span>{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['qualificationStartDate-month'] }} </span>
+                                        / <span>{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['qualificationStartDate-year'] }}</span>
+                                    </dd>
+                                </div>
+
+                                <!-- Teacher training qualification end date -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Completion date
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        <span>{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['qualificationEndDate-month'] }} </span>
+                                        / <span>{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['qualificationEndDate-year'] }}</span>
+                                    </dd>
+                                </div>
+
+                                <!-- Teacher training qualification award date -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Certificate date
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        <span>{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['qualificationAwardDate-month'] }} </span>
+                                        / <span>{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['qualificationAwardDate-year'] }}</span>
+                                    </dd>
+                                </div>
+
+                                <!-- Teacher training certificate? -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Qualification certificate
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        <ul class="govuk-list govuk-list--spaced">
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['qualification-image'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['qualification-image-name']
+                                                    }} (opens in a new tab)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['qualification-image-2'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['qualification-image-2-name']
+                                                    }} (opens in a new tab)
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </div>
+
+                                <!-- Teacher training certificate translation? -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Qualification certificate translation
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        <ul class="govuk-list govuk-list--spaced">
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['qualification-translation-image'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['qualification-translation-image-name']
+                                                    }}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </div>
+
+                                <!-- Teacher training transcript -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Qualification transcript
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        <ul class="govuk-list govuk-list--spaced">
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['transcript-image'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['transcript-image-name'] }}
+                                                    (opens in a new tab)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['transcript-image-2'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['transcript-image-2-name']
+                                                    }} (opens in a new tab)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['transcript-image-3'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['transcript-image-3-name']
+                                                    }} (opens in a new tab)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['transcript-image-4'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['transcript-image-4-name']
+                                                    }} (opens in a new tab)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['transcript-image-5'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['transcript-image-5-name']
+                                                    }} (opens in a new tab)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['transcript-image-6'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['transcript-image-6-name']
+                                                    }} (opens in a new tab)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['transcript-image-7'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['transcript-image-7-name']
+                                                    }} (opens in a new tab)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['transcript-image-8'] }}"
+                                                   class="govuk-link"
+                                                   target="_blank">
+                                                    {{ data['applicant_1']
+                                                    ['qualification']
+                                                    ['qualification-1']
+                                                    ['transcript-image-8-name']
+                                                    }} (opens in a new tab)
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </div>
+
+                                <!-- Teacher training transcript translation -->
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Qualification transcript translation
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        <a href="{{ data['applicant_1'] ['qualification'] ['qualification-1'] ['transcript-translation-image'] }}"
+                                           class="govuk-link" target="_blank">
+                                            {{ data['applicant_1']
+                                            ['qualification']
+                                            ['qualification-1']
+                                            ['transcript-translation-image-name']
+                                            }}
+                                        </a>
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button"
+              id="accordion-default-heading-2">
+          University
+        </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-2"
+                         class="govuk-accordion__section-content"
+                         aria-labelledby="accordion-default-heading-2">
+                        <div class="govuk-summary-list__card">
+                            <div class="govuk-summary-list__card-title-wrapper">
+                                <h2 class="govuk-summary-list__card-title">Your
+                                    university degree</h2>
+                            </div>
+                            <div class="govuk-summary-list__card-content">
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                                    <!-- University degree title -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            University degree title
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            {{ data['applicant_1'] ['degree']
+                                            ['degree-1'] ['degreeTitle'] }}
+                                        </dd>
+                                    </div>
+
+                                    <!-- University name -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Institution name
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            {{ data['applicant_1'] ['degree']
+                                            ['degree-1']
+                                            ['degreeInstitutionName'] }}
+                                        </dd>
+                                    </div>
+
+                                    <!-- Institution country -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Country of school
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            {{ data['applicant_1'] ['degree']
+                                            ['degree-1']
+                                            ['degreeInstitutionCountry']
+                                            }}
+                                        </dd>
+                                    </div>
+
+                                    <!-- Degree start date -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Start date
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            <span>{{ data['applicant_1'] ['degree'] ['degree-1'] ['degreeStartDate-month'] }} </span>
+                                            /
+                                            <span>{{ data['applicant_1'] ['degree'] ['degree-1'] ['degreeStartDate-year'] }}</span>
+                                        </dd>
+                                    </div>
+
+                                    <!-- Degree completion date -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Completion date
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            <span>{{ data['applicant_1'] ['degree'] ['degree-1'] ['degreeEndDate-month'] }} </span>
+                                            /
+                                            <span>{{ data['applicant_1'] ['degree'] ['degree-1'] ['degreeEndDate-year'] }}</span>
+                                        </dd>
+                                    </div>
+
+                                    <!-- Certificate date -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Certificate date
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            <span>{{ data['applicant_1'] ['degree'] ['degree-1'] ['certificateDate-month'] }} </span>
+                                            /
+                                            <span>{{ data['applicant_1'] ['degree'] ['degree-1'] ['certificateDate-year'] }}</span>
+                                        </dd>
+                                    </div>
+
+                                    <!-- University degree certificate? -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            University degree certificate
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            <ul class="govuk-list govuk-list--spaced">
+                                                <li>
+                                                    <a href="{{ data['applicant_1'] ['degree'] ['degree-1'] ['degree-certificate-image'] }}"
+                                                       class="govuk-link"
+                                                       target="_blank">
+                                                        {{ data['applicant_1']
+                                                        ['degree'] ['degree-1']
+                                                        ['degree-certificate-image-name']
+                                                        }} (opens in a new tab)
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ data['applicant_1'] ['degree'] ['degree-1'] ['degree-certificate-image-2'] }}"
+                                                       class="govuk-link"
+                                                       target="_blank">
+                                                        {{ data['applicant_1']
+                                                        ['degree'] ['degree-1']
+                                                        ['degree-certificate-image-2-name']
+                                                        }} (opens in a new tab)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                    </div>
+
+                                    <!-- University degree certificate translation? -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            University degree certificate
+                                            translation
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+
+                                        </dd>
+                                    </div>
+
+                                    <!-- University degree transcript? -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            University degree transcript
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            <ul class="govuk-list govuk-list--spaced">
+                                                <li>
+                                                    <a href="{{ data['applicant_1'] ['degree'] ['degree-1'] ['degree-certificate-transcript-image'] }}"
+                                                       class="govuk-link"
+                                                       target="_blank">
+                                                        {{ data['applicant_1']
+                                                        ['degree'] ['degree-1']
+                                                        ['degree-certificate-transcript-image-name']
+                                                        }} (opens in a new
+                                                        tab)
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ data['applicant_1'] ['degree'] ['degree-1'] ['degree-certificate-transcript-image-2'] }}"
+                                                       class="govuk-link"
+                                                       target="_blank">
+                                                        {{ data['applicant_1']
+                                                        ['degree'] ['degree-1']
+                                                        ['degree-certificate-transcript-image-2-name']
+                                                        }} (opens in a
+                                                        new tab)
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ data['applicant_1'] ['degree'] ['degree-1'] ['degree-certificate-transcript-image-3'] }}"
+                                                       class="govuk-link"
+                                                       target="_blank">
+                                                        {{ data['applicant_1']
+                                                        ['degree'] ['degree-1']
+                                                        ['degree-certificate-transcript-image-3-name']
+                                                        }} (opens in a
+                                                        new tab)
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ data['applicant_1'] ['degree'] ['degree-1'] ['degree-certificate-transcript-image-4'] }}"
+                                                       class="govuk-link"
+                                                       target="_blank">
+                                                        {{ data['applicant_1']
+                                                        ['degree'] ['degree-1']
+                                                        ['degree-certificate-transcript-image-4-name']
+                                                        }} (opens in a
+                                                        new tab)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                    </div>
+
+                                    <!-- University degree transcript translation -->
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            University degree transcript
+                                            translation
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="/assess-qualifications" method="post">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-visually-hidden">
+                        <h2 class="govuk-fieldset__heading">
+                            Exempt from English language
+                        </h2>
+                    </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small"
+                         data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input"
+                                   id="isExemptFromEnglishLanguageByQualification"
+                                   name="isExemptFromEnglishLanguageByQualification" type="checkbox"
+                                   value="isExemptFromEnglishLanguageByQualification">
+                            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold"
+                                   for="isExemptFromEnglishLanguageByQualification">
+                                This applicant has indicated English language exemption by country of study and their qualification documents confirm this.
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <h2 class="govuk-heading-s">Check:</h2>
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>applicant holds qualifications that meet the required
+                    academic level (level 6 academic qualification
+                    or equivalent)
+                </li>
+                <li>teaching qualifications were completed in an eligible
+                    country (for example, we cannot award QTS
+                    where they applied through Spain, but their teaching was
+                    completed in South Africa)
+                </li>
+                <li>they’re qualified to teach in mainstream education (not
+                    vocationally only/SEN only/early
+                    years/pre-school only)
+                </li>
+                <li>the applicant is qualified to teach children aged 11-16</li>
+                <li>their teaching qualification specifically qualifies them to teach either Maths, Science, Biology, Chemistry, Physics, French, German, Italian, Japanese, Latin, Mandarin, Russian or Spanish (OR they have a teaching qualification for children aged 11-16 AND at least 50% of their degree was in one of those subjects)</li>
+                <li>teacher qualification certificate is present (and
+                    translation if required)</li>
+                <li>teacher qualification transcript is present (and translation
+                    if required)
+                </li>
+
+                <!-- Where a separate university degree is required) -->
+                <li>university degree qualification certificate is present (and
+                    translation if required)
+                </li>
+                <li>university degree transcript is present (and translation if
+                    required)
+                </li>
+
+                <!-- Where the applicant has chosen to add another degree -->
+                <li>additional degree qualification certificate is present (and
+                    translation if required)
+                </li>
+                <li>additional degree transcript is present (and translation if
+                    required)
+                </li>
+            </ul>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset"
+                          aria-describedby="assess-qualifications-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                            Has the applicant completed this section to your
+                            satisfaction?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input"
+                                   id="assess-qualifications"
+                                   name="assess-qualifications"
+                                   type="radio"
+                                   value="yes"
+                                   data-aria-controls="conditional-assess-qualifications"
+                                   {{ checked("assess-qualifications", "yes") }}>
+                            <label class="govuk-label govuk-radios__label"
+                                   for="assess-qualifications">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input"
+                                   id="assess-qualifications-2"
+                                   name="assess-qualifications"
+                                   type="radio"
+                                   value="no"
+                                   {{ checked("assess-qualifications", "no") }}
+                                   data-aria-controls="conditional-assess-qualifications-2">
+                            <label class="govuk-label govuk-radios__label"
+                                   for="assess-qualifications-2">
+                                No
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                             id="conditional-assess-qualifications-2">
+                            <div class="govuk-form-group">
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset"
+                                              aria-describedby="fail-reason-hint">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            <h1 class="govuk-fieldset__heading">
+                                                What are the reasons for your
+                                                recommendation?
+                                            </h1>
+                                        </legend>
+                                        <div id="fail-reason-hint"
+                                             class="govuk-hint">
+                                            Select all options that are relevant
+                                            to you.
+                                        </div>
+                                        <div class="govuk-checkboxes"
+                                             data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-qualifications"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="Teaching qualifications were completed in an ineligible country"
+                                                       data-aria-controls="conditional-qualifications-applicant-note-1"
+                                                       {{ checked("fail-reason-qualifications", "Teaching qualifications were completed in an ineligible country") }}>
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-qualifications">
+                                                    Teaching qualifications were
+                                                    completed in an ineligible
+                                                    country.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-1">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-1">
+                                                        Note to the applicant (optional)
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-1-hint" class="govuk-hint">
+                                                        As this reason triggers a decline, you do not need to add a note, but you can use the space below to add anything you feel might be helpful, if you want to.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-1" name="qualifications-applicant-note-1" rows="5" placeholder="Example: We declined this QTS application as you already have another application in progress."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-2"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="Teaching qualifications do not meet the required academic level"
+                                                       {{ checked("fail-reason-qualifications", "Teaching qualifications do not meet the required academic level") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-2">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-2">
+                                                    Teaching qualifications do
+                                                    not meet the required
+                                                    academic level.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-2">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-2">
+                                                        Note to the applicant (optional)
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-2-hint" class="govuk-hint">
+                                                        As this reason triggers a decline, you do not need to add a note, but you can use the space below to add anything you feel might be helpful, if you want to.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-2" name="qualifications-applicant-note-2" rows="5" placeholder="Example: We declined this QTS application as you already have another application in progress."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-3"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="Not qualified to teach in mainstream education"
+                                                       {{ checked("fail-reason-qualifications", "Not qualified to teach in mainstream education") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-3">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-3">
+                                                    Not qualified to teach in
+                                                    mainstream education.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-3">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-3">
+                                                        Note to the applicant (optional)
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-3-hint" class="govuk-hint">
+                                                        As this reason triggers a decline, you do not need to add a note, but you can use the space below to add anything you feel might be helpful, if you want to.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-3" name="qualifications-applicant-note-3" rows="5" placeholder="Example: We declined this QTS application as you already have another application in progress."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-4"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="The teaching qualification certificate (or translation) is illegible"
+                                                       {{ checked("fail-reason-qualifications", "The teaching qualification certificate (or translation) is illegible") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-4">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-4">
+                                                    The teaching qualification
+                                                    certificate (or translation)
+                                                    is
+                                                    illegible.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-4">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-4">
+                                                        Note to the applicant
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-4-hint" class="govuk-hint">
+                                                        Use this space to tell the applicant what they need to do. Make sure your instructions are clear.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-4" name="qualifications-applicant-note-4" rows="5" placeholder="Example:  The right-hand section of your teaching qualification document is missing, please take a new image and upload it."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-5"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="The teaching qualification transcript (or translation) is illegible"
+                                                       {{ checked("fail-reason-qualifications", "The teaching qualification transcript (or translation) is illegible") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-5">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-5">
+                                                    The teaching qualification
+                                                    transcript (or translation)
+                                                    is illegible.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-5">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-5">
+                                                        Note to the applicant
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-5-hint" class="govuk-hint">
+                                                        Use this space to tell the applicant what they need to do. Make sure your instructions are clear.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-5" name="qualifications-applicant-note-5" rows="5" placeholder="Example:  The right-hand section of your teaching qualification document is missing, please take a new image and upload it."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                        id="fail-reason-13"
+                                                        name="fail-reason-qualifications"
+                                                        type="checkbox"
+                                                        value="The applicant is not qualified to teach one of the subjects that we can currently accept."
+                                                        {{ checked("fail-reason-qualifications", "The applicant is not qualified to teach one of the subjects that we can currently accept.") }}
+                                                data-aria-controls="conditional-qualifications-applicant-note-13">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                        for="fail-reason-13">
+                                                    The applicant is not qualified to teach one of the subjects that we can currently accept.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-13">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-13">
+                                                        Note to the applicant (optional)
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-13-hint" class="govuk-hint">
+                                                        As this reason triggers a decline, you do not need to add a note, but you can use the space below to add anything you feel might be helpful, if you want to.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-13" name="qualifications-applicant-note-13" rows="5" placeholder="Example: We declined this QTS application as you already have another application in progress."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                        id="fail-reason-14"
+                                                        name="fail-reason-qualifications"
+                                                        type="checkbox"
+                                                        value="The applicant is not qualified to teach children aged 11-16"
+                                                        {{ checked("fail-reason-qualifications", "The applicant is not qualified to teach children aged 11-16") }}
+                                                data-aria-controls="conditional-qualifications-applicant-note-14">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                        for="fail-reason-14">
+                                                    The applicant is not qualified to teach children aged 11-16.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-14">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-14">
+                                                        Note to the applicant (optional)
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-14-hint" class="govuk-hint">
+                                                        As this reason triggers a decline, you do not need to add a note, but you can use the space below to add anything you feel might be helpful, if you want to.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-14" name="qualifications-applicant-note-14" rows="5" placeholder="Example: We declined this QTS application as you already have another application in progress."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-6"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="The university degree certificate (or translation) is illegible"
+                                                       {{ checked("fail-reason-qualifications", "The university degree certificate (or translation) is illegible") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-6">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-6">
+                                                    The university degree
+                                                    certificate (or translation)
+                                                    is illegible.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-6">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-6">
+                                                        Note to the applicant
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-6-hint" class="govuk-hint">
+                                                        Use this space to tell the applicant what they need to do. Make sure your instructions are clear.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-6" name="qualifications-applicant-note-6" rows="5" placeholder="Example:  The right-hand section of your teaching qualification document is missing, please take a new image and upload it."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-7"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="University degree transcript (or translation) is illegible"
+                                                       {{ checked("fail-reason-qualifications", "University degree transcript (or translation) is illegible") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-7">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-7">
+                                                    University degree transcript
+                                                    (or translation) is
+                                                    illegible.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-7">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-7">
+                                                        Note to the applicant
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-7-hint" class="govuk-hint">
+                                                        Use this space to tell the applicant what they need to do. Make sure your instructions are clear.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-7" name="qualifications-applicant-note-7" rows="5" placeholder="Example:  The right-hand section of your teaching qualification document is missing, please take a new image and upload it."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-8"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox" value="The name on the online application form is different from 1 or more
+                                                    qualification documents, but no evidence of change of name was
+                                                    provided"
+                                                       {{ checked("fail-reason-qualifications", "The name on the online application form is different from 1 or more qualification documents, but no evidence of change of name was provided") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-8">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-8">
+                                                    The name on the online
+                                                    application form is
+                                                    different from 1 or more
+                                                    qualification documents, but
+                                                    no evidence of change of
+                                                    name was
+                                                    provided.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-8">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-8">
+                                                        Note to the applicant
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-8-hint" class="govuk-hint">
+                                                        Use this space to tell the applicant what they need to do. Make sure your instructions are clear.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-8" name="qualifications-applicant-note-8" rows="5" placeholder="Example:  The right-hand section of your teaching qualification document is missing, please take a new image and upload it."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-9"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="The required teaching hours have not been fulfilled"
+                                                       {{ checked("fail-reason-qualifications", "The required teaching hours have not been fulfilled") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-9">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-9">
+                                                    The required teaching hours
+                                                    have not been fulfilled.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-9">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-9">
+                                                        Note to the applicant (optional)
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-9-hint" class="govuk-hint">
+                                                        As this reason triggers a decline, you do not need to add a note, but you can use the space below to add anything you feel might be helpful, if you want to.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-9" name="qualifications-applicant-note-9" rows="5" placeholder="Example: We declined this QTS application as you already have another application in progress."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-10"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="The qualifications do not support the teaching subjects entered"
+                                                       {{ checked("fail-reason-qualifications", "The qualifications do not support the teaching subjects entered") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-10">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-10">
+                                                    The qualifications do not
+                                                    support the teaching
+                                                    subjects entered.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-10">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-10">
+                                                        Note to the applicant
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-10-hint" class="govuk-hint">
+                                                        Use this space to tell the applicant what they need to do. Make sure your instructions are clear.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-10" name="qualifications-applicant-note-10" rows="5" placeholder="Example:  The right-hand section of your teaching qualification document is missing, please take a new image and upload it."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-11"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="The qualifications do not match what was entered on the form"
+                                                       {{ checked("fail-reason-qualifications", "The qualifications do not match what was entered on the form") }}
+                                                       data-aria-controls="conditional-qualifications-applicant-note-11">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-11">
+                                                    The qualifications do not
+                                                    match what was entered on
+                                                    the form.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-11">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-11">
+                                                        Note to the applicant
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-11-hint" class="govuk-hint">
+                                                        Use this space to tell the applicant what they need to do. Make sure your instructions are clear.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-11" name="qualifications-applicant-note-11" rows="5" placeholder="Example:  The right-hand section of your teaching qualification document is missing, please take a new image and upload it."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input"
+                                                       id="fail-reason-12"
+                                                       name="fail-reason-qualifications"
+                                                       type="checkbox"
+                                                       value="The qualifications do not match what was entered on the form"
+                                                       {{ checked("fail-reason-qualifications", "The applicant’s qualification documents do not confirm English language exemption by country of study") }}
+                                                data-aria-controls="conditional-qualifications-applicant-note-12">
+                                                <label class="govuk-label govuk-checkboxes__label"
+                                                       for="fail-reason-12">
+                                                    The applicant’s qualification documents do not confirm English language exemption by country of study.
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-qualifications-applicant-note-12">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-!-font-weight-bold" for="qualifications-applicant-note-12">
+                                                        Note to the applicant
+                                                    </label>
+                                                    <div id="qualifications-applicant-note-11-hint" class="govuk-hint">
+                                                        Use this space to tell the applicant what they need to do. Make sure your instructions are clear.
+                                                    </div>
+                                                    <textarea class="govuk-textarea" id="qualifications-applicant-note-12" name="qualifications-applicant-note-12" rows="5" placeholder="Example:  The right-hand section of your teaching qualification document is missing, please take a new image and upload it."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h2 class="govuk-fieldset__heading">
+                            Eligibility criteria
+                        </h2>
+                    </legend>
+                    <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                           View data points
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                         <b>Submission date:</b> 	12 April 2022 at 09:01<br>
+                         <b>Country of submission:</b> South Africa
+                        </div>
+                      </details>
+                    <div class="govuk-checkboxes govuk-checkboxes--small"
+                         data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input"
+                                   id="isExemptFromEnglishLanguageByQualification"
+                                   name="isExemptFromEnglishLanguageByQualification" type="checkbox"
+                                   value="isExemptFromEnglishLanguageByQualification">
+                            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold"
+                                   for="isExemptFromEnglishLanguageByQualification">
+                                   I have assessed this application based on the eligibility criteria that was in place on the date that it was submitted. 
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+                <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

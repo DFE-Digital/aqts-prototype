@@ -6,3 +6,45 @@
 // Add extra styles here
 // Pull styles from MOJ https://design-patterns.service.justice.gov.uk/
 
+.hods-alert {
+    border-color: #2b8cc4;
+    background-color: #dbeff9;
+    font-family: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: inherit;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    clear: both;
+    border-left: 10px solid #b1b4b6;
+}
+
+.hods-alert__heading {
+    font-family: 'GDS Transport';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.1111111111;
+    margin-bottom: 15px;
+}
+
+
+.panel-border-wide.hods-alert {
+    border-color: #2b8cc4;
+    background-color: #dbeff9;
+    }
+    .panel-border-wide.alert-success {
+    border-color: #28a197;
+    background-color: #c6ece9;
+    }
+    .panel-border-wide.alert-error {
+    border-color: #c42b2b;
+    background-color: #f3dede;
+    }

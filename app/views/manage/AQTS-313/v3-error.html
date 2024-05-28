@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+First assessment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#">Confirm you have assessed this application based on the eligibility criteria that was in place on the date that it was submitted</a>
+                  </li>
+                
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        <h1 class="govuk-heading-xl">
+            QTS review completed
+        </h1>
+
+       
+            <p>You’ve completed your review of this QTS application and marked all sections as completed to your satisfaction.</p>
+       
+
+            <div class="hods-alert" style="border-color: #2b8cc4">
+                <h2 class="hods-alert__heading">  Eligibility criteria for South Africa has changed.</h2>
+
+            <p class="govuk-body">
+                By continuing, you agree you assessed this application against the criteria in place on the date it was submitted.<br>
+                  <br>
+                  This application was submitted on 24 April 2024.
+             </p>   
+            </div>
+
+            <div class="govuk-form-group govuk-form-group--error">
+                <fieldset class="govuk-fieldset ">
+                    <p id="countries-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Confirm you have assessed this application based on the eligibility criteria that was in place on the date that it was submitted
+                      </p>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="organisation">
+                        I have assessed this application based on the eligibility criteria that was in place on the date that it was submitted.
+                      </label>
+                    </div>
+                    
+                  </div>
+                </fieldset>
+              </div>
+
+           
+
+            <div class="govuk-!-padding-bottom-2"></div>
+        <form action="/application-awarded" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            You can:
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                       
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input"
+                                   id="assessment-outcome"
+                                   name="assessment-outcome" type="radio"
+                                   value="award-qts" {{ checked("assessment-outcome", "award-qts") }} >
+                            <label class="govuk-label govuk-radios__label"
+                                   for="assessment-outcome">
+                                Award QTS pending verifications
+                            </label>
+                        </div>
+                       
+                    </div>
+
+                </fieldset>
+            </div>
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+                <a class="govuk-link" href="#">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

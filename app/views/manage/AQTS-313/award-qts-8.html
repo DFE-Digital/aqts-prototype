@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+First assessment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            QTS review completed
+        </h1>
+
+       
+            <p>You’ve completed your review of this QTS application and marked all sections as completed to your satisfaction.</p>
+       
+         
+
+
+              <div class="govuk-form-group govuk-!-padding-top-4">
+                <fieldset class="govuk-fieldset">
+                   
+
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                          <span class="govuk-visually-hidden">Warning</span>
+                          Eligibility criteria for South Africa changed on 1 June 2024.
+                        </strong>
+                    </div>
+                    
+                    <p class="govuk-body govuk-!-margin-bottom-7">
+                          This application was submitted on 28 April 2024.<br>
+                          <br>
+                          By continuing you agree you assessed this application against the criteria in place on the date it was submitted.
+                     </p> 
+                   
+                       
+                    <div class="govuk-checkboxes govuk-checkboxes--small"
+                         data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input"
+                                   id="isExemptFromEnglishLanguageByQualification"
+                                   name="isExemptFromEnglishLanguageByQualification" type="checkbox"
+                                   value="isExemptFromEnglishLanguageByQualification">
+                            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold"
+                                   for="isExemptFromEnglishLanguageByQualification">
+                                   I have assessed this application based on the eligibility criteria that was in place on the date that it was submitted. 
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+        <form action="/application-awarded" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            You can:
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                       
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input"
+                                   id="assessment-outcome"
+                                   name="assessment-outcome" type="radio"
+                                   value="award-qts" {{ checked("assessment-outcome", "award-qts") }} >
+                            <label class="govuk-label govuk-radios__label"
+                                   for="assessment-outcome">
+                                Award QTS pending verifications
+                            </label>
+                        </div>
+                       
+                    </div>
+
+                </fieldset>
+            </div>
+
+            
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+                <button class="govuk-button govuk-button--secondary"
+                        data-module="govuk-button"
+                        formaction="overview">
+                    Save as draft
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
