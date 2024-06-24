@@ -1,0 +1,239 @@
+// Set default state variable value
+{% set requirePreassessment = true %}
+
+
+
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list",
+text: "Search",
+active: false
+},
+{
+href: "#2",
+text: "Suitability records",
+active: true
+},
+{
+    href: "#3",
+    text: "Support console"
+    },
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+<a class="govuk-back-link"
+        href="javascript:window.history.back()">Back</a>
+        
+{% endblock %}
+        
+        
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">Change suitability record for Mary Smith</h1>
+
+            <h2 class="govuk-heading-m">Current record</h2>
+           
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Given name
+                </dt>
+                <dd class="govuk-summary-list__value">
+               Mary
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Family name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 Smith
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Country trained in
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Ghana
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 13 June 1990
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Reference
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 0000561
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Suitability status 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag govuk-tag--grey"> Archived </strong>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Suitability reasons 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Deemed unsuitable by referee email and subsequent suitability panel.
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Date archived
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  21 June 2024
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Reason for archiving
+                </dt>
+                <dd class="govuk-summary-list__value">
+               No longer relevant.
+                </dd>
+              </div>
+            </dl>
+
+
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Update record</h2>
+            <div id="teachable-subject-container-1"
+                    class="govuk-form-group">
+                <label class="govuk-label" for="teachable-subject-1">
+                    Given name </label> <input class="govuk-input"
+                    id="teachable-subject-1"
+                    name="teachable-subject-1"
+                    value="{{ data['teachable-subject-1'] }}"
+                    type="text">
+            </div>
+            <div id="teachable-subject-container-2"
+                    class="govuk-form-group">
+                <label class="govuk-label" for="teachable-subject-2">
+                    Family name </label> <input class="govuk-input"
+                    id="teachable-subject-2"
+                    name="teachable-subject-2"
+                    value="{{ data['teachable-subject-2'] }}"
+                    type="text">
+            </div>
+            <div id="teachable-subject-container-3"
+                    class="govuk-form-group">
+                <label class="govuk-label" for="teachable-subject-3">
+                   Country trained in </label> <input class="govuk-input"
+                    id="teachable-subject-3"
+                    name="teachable-subject-3"
+                    value="{{ data['teachable-subject-3'] }}"
+                    type="text">
+            </div>
+
+            <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend ">
+                    <h3 class="govuk-fieldset__heading">
+                      Date of birth
+                    </h3>
+                  </legend>
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+            </div>
+
+                <div id="teachable-subject-container-5"
+                class="govuk-form-group">
+            <label class="govuk-label" for="teachable-subject-3">
+             Application number (optional) </label> <input class="govuk-input"
+                id="teachable-subject-5"
+                name="teachable-subject-5"
+                value="{{ data['teachable-subject-5'] }}"
+                type="text">
+        </div>
+              
+
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-label-wrapper">
+            <label class="govuk-label ovuk-fieldset__heading">
+              Suitability reasons
+            </label>
+          </h3>
+          <div id="more-detail-hint" class="govuk-body">
+            Internal note: Briefly explain why this suitability record has been created.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+        </div>
+        
+  
+
+    
+
+       
+        <div class="govuk-button-group govuk-!-padding-top-5">
+            <button class="govuk-button" data-module="govuk-button">
+                Update record
+            </button>
+            <a href="archive-record" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+              Set to active
+            </a>
+            <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+        </div>
+    </form>
+        </form>
+    </div>
+</div>
+{% endblock %}

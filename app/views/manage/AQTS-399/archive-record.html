@@ -1,0 +1,82 @@
+// Set default state variable value
+{% set requirePreassessment = true %}
+
+
+
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list",
+text: "Search",
+active: false
+},
+{
+href: "#2",
+text: "Suitability records",
+active: true
+},
+{
+    href: "#3",
+    text: "Support console"
+    },
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+<a class="govuk-back-link"
+        href="javascript:window.history.back()">Back</a>
+        
+{% endblock %}
+        
+        
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">Archive suitability record for Mary Smith</h1>
+
+           
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-label-wrapper">
+            <label class="govuk-label ovuk-fieldset__heading">
+             Reason for archiving
+            </label>
+          </h3>
+          <div id="more-detail-hint" class="govuk-body">
+            Internal note: Briefly explain why this suitability record is being archived.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+        </div>
+        
+  
+
+    
+
+       
+        <div class="govuk-button-group govuk-!-padding-top-5">
+            <button class="govuk-button" data-module="govuk-button">
+               Set to active
+            </button>
+            
+            <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+        </div>
+    </form>
+        </form>
+    </div>
+</div>
+{% endblock %}

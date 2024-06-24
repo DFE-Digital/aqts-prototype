@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+University degree – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+      rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+    openregisterLocationPicker({
+        selectElement: document.getElementById('qualification-institution-country'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["qualification-institution-country"] }}'
+    })
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="new-quals-v3-p2" method="post">
+
+		<span class="govuk-caption-l">Your qualifications</span>
+		<h1 class="govuk-heading-l">Teaching qualification guidance</h1>
+
+		<p>Please review the below guidance before entering your teaching qualifications on the next page.</p>
+
+		<h1 class="govuk-heading-m">Qualification criteria for India</h1>
+		<p class="govuk-body">Your teaching qualification must be from an institution that is recognised by the <a href="///">National Council for Teacher Education</a>.</p>
+		
+		<p>We cannot accept a Diploma in Education, Diploma in Teacher Education or a Trainer Teachers' Certificate from India as these do not meet the required level.</p>
+
+
+		<h1 class="govuk-heading-m">Age and subject restrictions</h1>
+		
+		<p class="govuk-body">We only accept applications from teachers from [Country] who are qualified to teach children aged 11-16 in one or more of the following specific subjects:</p>
+
+		<p class="govuk-body">Maths, Science, Biology, Chemistry, Physics, French, German, Italian, Japanese, Latin, Mandarin, Russian, Spanish</p>
+		
+		<p class="govuk-body">Qualified means:</p>
+
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Your teaching qualification specifically states that you can teach one of the subjects listed above, for example, the subject is in the title of your teaching qualification</li>
+			<li>Your teaching qualification certificate shows at least 25% of your teaching qualification was in one of the listed subjects</li>
+			<li>Your bachelor’s degree certificate shows at least 50% of your degree was in one of the listed subjects</li>
+		</ul>	
+		
+		<p class="govuk-body " >We accept any of the above as evidence you are qualified to teach a specific subject.</p>
+
+		<h2 class="govuk-heading-m">More than one teaching qualification</h2>
+		
+		<p class="govuk-body">If you have more than one teaching qualification enter the first one you received that qualifies you to teach. For example, if you have a bachelor's and master's degree, and both qualify you to teach, enter the bachelor's degree here.</p>
+		<p class="govuk-body govuk-!-padding-bottom-3">You can add more degrees later.</p>
+
+
+		
+			
+					
+	
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button" name="progress-qualification-details"
+				        type="submit">Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				        name="progress-qualification-details" formaction="task-list">
+					Save and come back later
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+	<div class="govuk-grid-column-one-third"></div>
+</div>
+
+{% endblock %}

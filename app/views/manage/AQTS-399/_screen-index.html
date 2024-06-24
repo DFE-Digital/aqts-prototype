@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+AQTS-399 - Suitability designs
+  </h1>
+
+         
+  <table class="govuk-table">
+    
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+       
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Link</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          
+          <p><a href="https://lucid.app/lucidspark/fe0a6609-af6b-4476-b6f9-f4b82b20bbd0/edit?view_items=2giNAYifcsAp&invitationId=inv_c0102054-070f-4c08-9a6a-bb51ee34119c">Applications list</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+            Updated overview screen that shows a section for the suitability record. 
+            <br>
+            Refer to the high fidelity design on the Lucid board for this screen.
+          </p>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          
+          <p><a href="overview-start">Application overview</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+            Single application overview with the new suitability banner. 
+          </p>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            
+            <p><a href="suitability-log">Suitability record</a></p>
+            
+          </td>
+          <td class="govuk-table__cell">
+            <p>
+              New record of unsuitable candidates.
+              <br>
+              <a href="suitability-log-mvp-plus">MVP+ draft</a>
+            </p>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              
+              <p><a href="capture-form">Capture form</a>
+              <br><a href="capture-form-edit">Capture form: edit view</a>
+              <br><a href="archive-record">Archiving a record</a>
+              <br><a href="capture-form-archived">Capture form: view after archiving</a>
+            </p>
+              
+            </td>
+            <td class="govuk-table__cell">
+              <p>
+              Screens showing candidate capture form, editing and archiving a record.
+               
+              </p>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+      
+    </tbody>
+  </table>
+
+{% endblock %}

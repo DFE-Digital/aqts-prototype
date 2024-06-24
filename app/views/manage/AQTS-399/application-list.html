@@ -1,0 +1,751 @@
+// Temporarily added this logic to match the state of for applicant one.
+// TODO: Refactor this to stop duplicate logic
+
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task list – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}>
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list",
+text: "Home",
+active: true
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-from-desktop">
+        <h1 class="govuk-heading-xl">
+            Applications
+        </h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+
+
+        <form id="application-filter" novalidate="novalidate" method="post">
+            <h2 class="govuk-heading-m">Filters</h2>
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Apply filters
+                </button>
+
+                <a class="govuk-link govuk-link--no-visited-state" href="/application-list-clear">Clear selection</a>
+            </div>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="assessor-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
+                        Assessor name
+                    </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="assessor-name" name="assessor-name" type="checkbox" value="Ben Cooper">
+                            <label class="govuk-label govuk-checkboxes__label" for="assessor-name">
+                                Ben Cooper
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="assessor-name-2" name="assessor-name" type="checkbox" value="Carly Jayemanne">
+                            <label class="govuk-label govuk-checkboxes__label" for="assessor-name-2">
+                                Carly Jayemanne
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="assessor-name-3" name="assessor-name" type="checkbox" value="Nico Rodrigo">
+                            <label class="govuk-label govuk-checkboxes__label" for="assessor-name-3">
+                                Nico Rodrigo
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="assessor-name-4" name="assessor-name" type="checkbox" value="Sean Cheng">
+                            <label class="govuk-label govuk-checkboxes__label" for="assessor-name-4">
+                                Sean Cheng
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="assessor-name-5" name="assessor-name" type="checkbox" value="Shari Pataky">
+                            <label class="govuk-label govuk-checkboxes__label" for="assessor-name-5">
+                                Shari Pataky
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="assessor-name-6" name="assessor-name" type="checkbox" value="Not assigned">
+                            <label class="govuk-label govuk-checkboxes__label" for="assessor-name-6">
+                                Not assigned
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="filter-by-country">
+                    Country trained in
+                </label>
+                <input class="govuk-input" id="filter-by-country" name="filter-by-country" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="application-reference-number">
+                    Application reference number
+                </label>
+                <input class="govuk-input govuk-input--width-6" id="application-reference-number" name="application-reference-number" type="number" inputmode="numeric" placeholder="Example: 210245">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="applicant-last-name">
+                    Applicant name
+                </label>
+                <input class="govuk-input" id="applicant-last-name" name="applicant-last-name" type="text">
+            </div>
+
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h1 class="govuk-fieldset__heading">
+                        Created date
+                    </h1>
+                </legend>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="created-start-hint">
+                    <legend class="govuk-fieldset__legend--s">
+                        Start date
+                    </legend>
+                    <div class="govuk-date-input" id="created-start">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="created-start-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="created-start-day" name="created-start-day" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="created-start-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="created-start-month" name="created-start-month" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="created-start-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="created-start-year" name="created-start-year" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="created-end-hint">
+                    <legend class="govuk-fieldset__legend--s">
+                        End date
+                    </legend>
+                    <div class="govuk-date-input" id="created-end">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="created-end-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="created-end-day" name="created-end-day" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="created-end-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="created-end-month" name="created-end-month" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="created-end-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="created-end-year" name="created-end-year" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+            </fieldset>
+
+           
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="application-status-hint">
+                    <h3 class="govuk-heading-s">Action required by</h3>
+                    <!-- Overall status -->
+                    {% if data['workflow-status'] == 'Admin action'  %} 
+                    
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <input class="govuk-checkboxes__input" id="workflow-status" name="workflow-status" type="checkbox" value="Admin action" checked>
+                        <label class="govuk-label govuk-checkboxes__label" for="workflow-status">
+                       Admin <span class="application-status-total">(1)</span>
+                </label>
+               </div>
+
+               {% else %}
+                    <!-- Overall status -->
+                   
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <input class="govuk-checkboxes__input" id="workflow-status" name="workflow-status" type="checkbox" value="Admin action">
+                        <label class="govuk-label govuk-checkboxes__label" for="workflow-status">
+                       Admin <span class="application-status-total">(1)</span>
+                </label>
+               </div>
+               {% endif %}
+
+
+                 {% if data['workflow-status'] == 'Assessor action'  %} 
+               <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <input class="govuk-checkboxes__input" id="workflow-status-2" name="workflow-status" type="checkbox" value="Assessor action" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="workflow-status-2">
+               Assessor <span class="application-status-total">(2)</span>
+                    </label>
+                </div>
+
+                {% else %}
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <input class="govuk-checkboxes__input" id="workflow-status-2" name="workflow-status" type="checkbox" value="Assessor action">
+                                <label class="govuk-label govuk-checkboxes__label" for="workflow-status-2">
+                            Assessor <span class="application-status-total">(2)</span>
+                                    </label>
+                                </div>
+                {% endif %}
+                
+                {% if data['workflow-status'] == 'No action'  %} 
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="workflow-status-3" name="workflow-status" type="checkbox" value="No action" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="workflow-status-3">
+                   External <span class="application-status-total">(7)</span>
+                        </label>
+                    </div>
+                 
+
+                {% else %}
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="workflow-status-3" name="workflow-status" type="checkbox" value="No action">
+                    <label class="govuk-label govuk-checkboxes__label" for="workflow-status-3">
+                   External <span class="application-status-total">(7)</span>
+                        </label>
+                    </div>
+                {% endif %}
+
+                    
+                   
+
+
+                    <br>
+                <h3 class="govuk-heading-s">Stage</h3>
+                    <!-- Stages -->
+                {% if data['application-status'] == 'Preliminary check'  %} 
+                    
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="application-status" name="application-status" type="checkbox" value="Preliminary check" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="application-status">
+                   Pre-assessment <span class="application-status-total">(29)</span>
+                    </label>
+                    </div>
+                {% else %}
+                
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <input class="govuk-checkboxes__input" id="application-status" name="application-status" type="checkbox" value="Preliminary check">
+                <label class="govuk-label govuk-checkboxes__label" for="application-status">
+                Pre-assessment <span class="application-status-total">(29)</span>
+                </label>
+                </div>
+                {% endif %}
+                
+
+
+                {% if data['application-status'] == 'Not started'  %} 
+                 <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <input class="govuk-checkboxes__input" id="application-status-2" name="application-status" type="checkbox" value="Not started" checked>
+                            <label class="govuk-label govuk-checkboxes__label" for="application-status-2">
+                          Not started <span class="application-status-total">(17)</span>
+                    </label>
+                   </div>
+                {% else %}
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <input class="govuk-checkboxes__input" id="application-status-2" name="application-status" type="checkbox" value="Not started">
+                <label class="govuk-label govuk-checkboxes__label" for="application-status-2">
+                Not started <span class="application-status-total">(17)</span>
+                </label>
+                </div>
+                {% endif %}  
+                   
+
+                {% if data['application-status'] == 'Assessment'  %} 
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="application-status-3" name="application-status" type="checkbox" value="Assessment" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="application-status-3">
+                   Assessment <span class="application-status-total">(80)</span>
+                    </label>
+                </div>
+                {% else %}
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="application-status-3" name="application-status" type="checkbox" value="Assessment">
+                    <label class="govuk-label govuk-checkboxes__label" for="application-status-3">
+                   Assessment <span class="application-status-total">(80)</span>
+                    </label>
+                </div>
+                {% endif %} 
+
+
+                {% if data['application-status'] == 'Verification'  %} 
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="application-status-4" name="application-status" type="checkbox" value="Verification" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="application-status-4">
+                   Verification <span class="application-status-total">(2)</span>
+                    </label>
+                </div>
+                {% else %} 
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="application-status-4" name="application-status" type="checkbox" value="Verification">
+                    <label class="govuk-label govuk-checkboxes__label" for="application-status-4">
+                   Verification <span class="application-status-total">(2)</span>
+                    </label>
+                </div>
+                {% endif %} 
+
+
+
+                {% if data['application-status'] == 'Review'  %} 
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="application-status-5" name="application-status" type="checkbox" value="Review" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="application-status-5">
+                   Review <span class="application-status-total">(24)</span>
+                    </label>
+                </div>
+                {% else %} 
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="application-status-5" name="application-status" type="checkbox" value="Review">
+                    <label class="govuk-label govuk-checkboxes__label" for="application-status-5">
+                   Review <span class="application-status-total">(24)</span>
+                    </label>
+                </div>
+                {% endif %}
+
+
+                {% if data['application-status'] == 'Completed'  %} 
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="application-status-6" name="application-status" type="checkbox" value="Completed" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="application-status-6">
+                   Completed <span class="application-status-total">(64)</span>
+                    </label>
+                </div>
+                {% else %} 
+                <div class="govuk-checkboxes__item govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <input class="govuk-checkboxes__input" id="application-status-6" name="application-status" type="checkbox" value="Completed">
+                    <label class="govuk-label govuk-checkboxes__label" for="application-status-6">
+                   Completed <span class="application-status-total">(64)</span>
+                    </label>
+                </div>
+                {% endif %}
+
+
+                  
+
+                   
+               
+                </fieldset>
+            </div>
+        </form>
+    </div>
+
+
+
+    <div class="govuk-grid-column-two-thirds application__listing">
+        <div class="teaching-applications__applications teaching-applications__applications--regular">
+            <ol class="app-search-results">
+
+
+                {% if not (data['workflow-status'] or data['application-status']) or data['workflow-status'] == 'Assessor action' or (data['application-status'] == 'Assessment') %}
+                <li class="app-search-results__item">
+
+                      <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="not-in-prototype">{{ data['applicant_1'] ['first-name'] }} {{ data['applicant_1'] ['last-name'] }}</a></h2>
+                        <dl class="app-description-list app-description-list--search-result">
+                            <dt class="app-description-list__label"></dt>
+                            <dt class="app-description-list__label">Country trained in</dt>
+                            <dd>{{ data['applicant_1'] ['country'] }}</dd>
+                            {% if data['applicant_1'] ['region'] %}
+                                <dt class="app-description-list__label">State/territory trained in</dt>
+                                <dd>{{ data['applicant_1'] ['region'] }}</dd>
+                            {% endif %}
+                            <dt class="app-description-list__label">Created on</dt>
+                            <dd>{{ data['applicant_1'] ['submitted'] }}</dd>
+                            <dt class="app-description-list__label">Days remaining in SLA</dt>
+                            <dd>{{ data['applicant_1'] ['sla-days'] }}</dd>
+                            <dt class="app-description-list__label">Assigned to</dt>
+                            <dd>{{ data['assessor_1'] }}</dd>
+                            <dt class="app-description-list__label">Reviewer</dt>
+                            <dd>{{ data['assessor_3'] }}</dd>
+                            <dt class="app-description-list__label">Status</dt>
+                            <dd><strong class="govuk-tag govuk-tag--blue">Assessment in progress</strong></dd>
+
+                        
+                            {% if data['applicant_1'] ['notes'] %}
+                                <dt class="app-description-list__label">Notes</dt>
+                                <dd>{{ data['applicant_1'] ['notes'] ['note-1'] }}</dd>
+                            {% endif %}
+                        </dl>
+                </li>
+                {% endif %}
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'No action') or (data['application-status'] == 'Verification in progress') %}
+                <li class="app-search-results__item">
+                 
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="not-in-prototype.html">{{ data['applicant_2'] ['first-name'] }} {{ data['applicant_2'] ['last-name'] }}</a></h2>
+                    <dl class="app-description-list app-description-list--search-result">
+                        <dt class="app-description-list__label">Country trained in</dt>
+                        <dd>{{ data['applicant_2'] ['country'] }}</dd>
+                        {% if data['applicant_2'] ['region'] %}
+                            <dt class="app-description-list__label">State/territory trained in</dt>
+                            <dd>{{ data['applicant_2'] ['region'] }}</dd>
+                        {% endif %}
+                        <dt class="app-description-list__label">Created on</dt>
+                        <dd>{{ data['applicant_2'] ['submitted'] }}</dd>
+                        <dt class="app-description-list__label">Days remaining in SLA</dt>
+                        <dd>{{ data['applicant_2'] ['sla-days'] }}</dd>
+                        <dt class="app-description-list__label">Assigned to</dt>
+                        <dd>{{ data['assessor_2'] }}</dd>
+                        <dt class="app-description-list__label">Reviewer</dt>
+                        <dd>{{ data['assessor_1'] }}</dd>
+                        <dt class="app-description-list__label">Status</dt>
+                        <dd><strong class="govuk-tag govuk-tag--yellow">Waiting on LOPs</strong></dd>
+                        {% if data['applicant_2'] ['notes'] %}
+                            <dt class="app-description-list__label">Notes</dt>
+                            <dd>{{ data['applicant_2'] ['notes'] ['note-1'] }}</dd>
+                        {% endif %}
+                    </dl>
+                </li>
+                {% endif %}
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'No action') or (data['application-status'] == 'Verification in progress') %}
+                <li class="app-search-results__item">
+                   
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="not-in-prototype">{{ data['applicant_3'] ['first-name'] }} {{ data['applicant_3'] ['last-name'] }}</a></h2>
+                    <dl class="app-description-list app-description-list--search-result">
+                        <dt class="app-description-list__label">Country trained in</dt>
+                        <dd>{{ data['applicant_3'] ['country'] }}</dd>
+                        {% if data['applicant_3'] ['region'] %}
+                            <dt class="app-description-list__label">State/territory trained in</dt>
+                            <dd>{{ data['applicant_3'] ['region'] }}</dd>
+                        {% endif %}
+                        <dt class="app-description-list__label">Created on</dt>
+                        <dd>{{ data['applicant_3'] ['submitted'] }}</dd>
+                        <dt class="app-description-list__label">Days remaining in SLA</dt>
+                        <dd>{{ data['applicant_3'] ['sla-days'] }}</dd>
+                        <dt class="app-description-list__label">Assigned to</dt>
+                        <dd>{{ data['assessor_3'] }}</dd>
+                        <dt class="app-description-list__label">Reviewer</dt>
+                        <dd>{{ data['assessor_4'] }}</dd>
+                        <dt class="app-description-list__label">Status</dt>
+                        <dd><strong class="govuk-tag govuk-tag--yellow">Waiting on LOPS</strong></dd>
+                        {% if data['applicant_3'] ['notes'] %}
+                            <dt class="app-description-list__label">Notes</dt>
+                            <dd>{{ data['applicant_3'] ['notes'] ['note-1'] }}</dd>
+                        {% endif %}
+                    </dl>
+                </li>
+                {% endif %}
+
+
+
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'No action') or (data['application-status'] == 'Completed') %}
+                <li class="app-search-results__item">   
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="not-in-prototype">{{ data['applicant_4'] ['first-name'] }} {{ data['applicant_4'] ['last-name'] }}</a></h2>
+                    <dl class="app-description-list app-description-list--search-result">
+                        <dt class="app-description-list__label">Country trained in</dt>
+                        <dd>{{ data['applicant_4'] ['country'] }}</dd>
+                        {% if data['applicant_4'] ['region'] %}
+                            <dt class="app-description-list__label">State/territory trained in</dt>
+                            <dd>{{ data['applicant_4'] ['region'] }}</dd>
+                        {% endif %}
+                        <dt class="app-description-list__label">Created on</dt>
+                        <dd>{{ data['applicant_4'] ['submitted'] }}</dd>
+                        <dt class="app-description-list__label">Days remaining in SLA</dt>
+                        <dd>{{ data['applicant_4'] ['sla-days'] }}</dd>
+                        <dt class="app-description-list__label">Assigned to</dt>
+                        <dd>{{ data['assessor_4'] }}</dd>
+                        <dt class="app-description-list__label">Reviewer</dt>
+                        <dd>{{ data['assessor_3'] }}</dd>
+                        <dt class="app-description-list__label">Status</dt>
+                        <dd><strong class="govuk-tag govuk-tag--turquoise">Awarded</strong></dd>
+                        {% if data['applicant_4'] ['notes'] %}
+                            <dt class="app-description-list__label">Notes</dt>
+                            <dd>{{ data['applicant_4'] ['notes'] ['note-1'] }}</dd>
+                        {% endif %}
+                    </dl>
+                </li>
+                {% endif %}
+
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'Admin action') or (data['application-status'] == 'Verification') %}
+                <li class="app-search-results__item">
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="overview-start">Mary Smith</a></h2>
+                        <dl class="app-description-list app-description-list--search-result">
+                            <dt class="app-description-list__label"></dt>
+                            <dt class="app-description-list__label">Country trained in</dt>
+                            <dd>Ghana</dd>
+                           
+                            <dt class="app-description-list__label">Created on</dt>
+                            <dd>{{ data['applicant_1'] ['submitted'] }}</dd>
+                            <dt class="app-description-list__label">Days remaining in SLA</dt>
+                            <dd>{{ data['applicant_1'] ['sla-days'] }}</dd>
+                            <dt class="app-description-list__label">Assigned to</dt>
+                            <dd>{{ data['assessor_1'] }}</dd>
+                            <dt class="app-description-list__label">Reviewer</dt>
+                            <dd>{{ data['assessor_3'] }}</dd>
+                            <dt class="app-description-list__label">Status</dt>
+                            <dd><strong class="govuk-tag govuk-tag--blue">Verification in progress</strong></dd>
+
+                        
+                            {% if data['applicant_1'] ['notes'] %}
+                                <dt class="app-description-list__label">Notes</dt>
+                                <dd>{{ data['applicant_1'] ['notes'] ['note-1'] }}</dd>
+                            {% endif %}
+                        </dl>
+                </li>
+                {% endif %}
+               
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'No action') or (data['application-status'] == 'Verification') %}
+                <li class="app-search-results__item">
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="not-in-prototype">Jakub Hajek</a></h2>
+                    <dl class="app-description-list app-description-list--search-result">
+                        <dt class="app-description-list__label">Country trained in</dt>
+                        <dd>Germany</dd>
+                       
+                        <dt class="app-description-list__label">Created on</dt>
+                        <dd>{{ data['applicant_2'] ['submitted'] }}</dd>
+                        <dt class="app-description-list__label">Days remaining in SLA</dt>
+                        <dd>{{ data['applicant_2'] ['sla-days'] }}</dd>
+                        <dt class="app-description-list__label">Assigned to</dt>
+                        <dd>{{ data['assessor_2'] }}</dd>
+                        <dt class="app-description-list__label">Reviewer</dt>
+                        <dd>{{ data['assessor_1'] }}</dd>
+                        <dt class="app-description-list__label">Status</dt>
+                        <dd><strong class="govuk-tag govuk-tag--blue">Verification in progress</strong></dd>
+                       
+                    </dl>
+                </li>
+                {% endif %}
+
+
+                
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'Assessor action') or (data['application-status'] == 'Review') %}
+                <li class="app-search-results__item">
+                   
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="not-in-prototype.html">Logan Henriksson</a></h2>
+                    <dl class="app-description-list app-description-list--search-result">
+                        <dt class="app-description-list__label">Country trained in</dt>
+                        <dd>Sweden</dd>
+                        
+                        <dt class="app-description-list__label">Created on</dt>
+                        <dd>{{ data['applicant_1'] ['submitted'] }}</dd>
+                        <dt class="app-description-list__label">Days remaining in SLA</dt>
+                        <dd>{{ data['applicant_1'] ['sla-days'] }}</dd>
+                        <dt class="app-description-list__label">Assigned to</dt>
+                        <dd>{{ data['assessor_1'] }}</dd>
+                        <dt class="app-description-list__label">Reviewer</dt>
+                        <dd>{{ data['assessor_2'] }}</dd>
+                        <dt class="app-description-list__label">Status</dt>
+                        <dd><strong class="govuk-tag govuk-tag--pink">review</strong></dd>
+                        {% if data['applicant_1'] ['notes'] %}
+                            <dt class="app-description-list__label">Notes</dt>
+                            <dd>{{ data['applicant_1'] ['notes'] ['note-1'] }}</dd>
+                        {% endif %}
+                    </dl>
+                </li>
+                {% endif %}
+
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'No action') or (data['application-status'] == 'Verification in progress') %}
+                <li class="app-search-results__item">
+                 
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="not-in-prototype.html">Jon Jones</a></h2>
+                    <dl class="app-description-list app-description-list--search-result">
+                        <dt class="app-description-list__label">Country trained in</dt>
+                        <dd>Nigeria</dd>
+                        <dt class="app-description-list__label">Created on</dt>
+                        <dd>17 June 2023 at 10:25</dd>
+                        <dt class="app-description-list__label">Days remaining in SLA</dt>
+                        <dd>35</dd>
+                        <dt class="app-description-list__label">Assigned to</dt>
+                        <dd>{{ data['assessor_4'] }}</dd>
+                        <dt class="app-description-list__label">Reviewer</dt>
+                        <dd>{{ data['assessor_1'] }}</dd>
+                        <dt class="app-description-list__label">Status</dt>
+                        <dd><strong class="govuk-tag govuk-tag--yellow">Waiting on consent</strong></dd>
+                        {% if data['applicant_4'] ['notes'] %}
+                            <dt class="app-description-list__label">Notes</dt>
+                            <dd>{{ data['applicant_4'] ['notes'] ['note-1'] }}</dd>
+                        {% endif %}
+                    </dl>
+                </li>
+                {% endif %}
+
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'No action') or (data['application-status'] == 'Completed') %}
+                <li class="app-search-results__item">
+                 
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="application/overview">Noah Lachlan</a></h2>
+                    <dl class="app-description-list app-description-list--search-result">
+                        <dt class="app-description-list__label">Country trained in</dt>
+                        <dd>Australia</dd>
+                        <dt class="app-description-list__label">Created on</dt>
+                        <dd>{{ data['applicant_4'] ['submitted'] }}</dd>
+                        <dt class="app-description-list__label">Days remaining in SLA</dt>
+                        <dd>{{ data['applicant_4'] ['sla-days'] }}</dd>
+                        <dt class="app-description-list__label">Assigned to</dt>
+                        <dd>{{ data['assessor_4'] }}</dd>
+                        <dt class="app-description-list__label">Reviewer</dt>
+                        <dd>{{ data['assessor_1'] }}</dd>
+                        <dt class="app-description-list__label">Status</dt>
+                        <dd><strong class="govuk-tag govuk-tag--turquoise">Awarded</strong></dd>
+                        {% if data['applicant_4'] ['notes'] %}
+                            <dt class="app-description-list__label">Notes</dt>
+                            <dd>{{ data['applicant_4'] ['notes'] ['note-1'] }}</dd>
+                        {% endif %}
+                    </dl>
+                </li>
+                {% endif %}
+
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'No action') or (data['application-status'] == 'Completed') %}
+                <li class="app-search-results__item">
+             
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="not-in-prototype.html">Franc Rouge</a></h2>
+                    <dl class="app-description-list app-description-list--search-result">
+                        <dt class="app-description-list__label">Country trained in</dt>
+                        <dd>France</dd>
+                       
+                        <dt class="app-description-list__label">Created on</dt>
+                        <dd>{{ data['applicant_3'] ['submitted'] }}</dd>
+                        <dt class="app-description-list__label">Days remaining in SLA</dt>
+                        <dd>{{ data['applicant_3'] ['sla-days'] }}</dd>
+                        <dt class="app-description-list__label">Assigned to</dt>
+                        <dd>{{ data['assessor_3'] }}</dd>
+                        <dt class="app-description-list__label">Reviewer</dt>
+                        <dd>{{ data['assessor_4'] }}</dd>
+                        <dt class="app-description-list__label">Status</dt>
+                        <dd><strong class="govuk-tag govuk-tag--red">Declined</strong></dd>
+
+                    </dl>
+                </li>
+                {% endif %}
+
+                {%  if not (data['workflow-status'] or data['application-status']) or (data['workflow-status'] == 'Assessor action') or (data['application-status'] == 'Preliminary check') %}
+                <li class="app-search-results__item">
+             
+                    <h2 class="app-search-result__item-title"><a class="govuk-link--no-visited-state" href="not-in-prototype.html">Sabrina Iglesias</a></h2>
+                    <dl class="app-description-list app-description-list--search-result">
+                        <dt class="app-description-list__label">Country trained in</dt>
+                        <dd>Spain</dd>
+                       
+                        <dt class="app-description-list__label">Created on</dt>
+                        <dd>{{ data['applicant_3'] ['submitted'] }}</dd>
+                        <dt class="app-description-list__label">Days remaining in SLA</dt>
+                        <dd>{{ data['applicant_3'] ['sla-days'] }}</dd>
+                        <dt class="app-description-list__label">Assigned to</dt>
+                        <dd>{{ data['assessor_3'] }}</dd>
+                        <dt class="app-description-list__label">Reviewer</dt>
+                        <dd>{{ data['assessor_4'] }}</dd>
+                        <dt class="app-description-list__label">Status</dt>
+                        <dd><strong class="govuk-tag govuk-tag--pink">Preliminary check</strong></dd>
+
+                    </dl>
+                </li>
+                {% endif %}
+
+
+            </ol>
+        </div>
+        <nav class="govuk-pagination" role="navigation" aria-label="results">
+            <div class="govuk-pagination__prev">
+                <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                    </svg>
+                    <span class="govuk-pagination__link-title">Previous</span></a>
+            </div>
+            <ul class="govuk-pagination__list">
+                <li class="govuk-pagination__item govuk-pagination__item--current">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                        1
+                    </a>
+                </li>
+                <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                        2
+                    </a>
+                </li>
+                <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                        3
+                    </a>
+                </li>
+            </ul>
+            <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg></a>
+            </div>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script>
+     function removePaginationIfLessThanTenItems() {
+            const pagination = document.querySelector('nav.govuk-pagination');
+            const resultItems = document.querySelectorAll('ol.app-search-results li.app-search-results__item');
+
+            if (resultItems.length < 10) {
+                if (pagination) {
+                    pagination.remove();
+                }
+            }
+        }
+
+        window.onload = removePaginationIfLessThanTenItems;
+
+</script>
+
+{% endblock %}
