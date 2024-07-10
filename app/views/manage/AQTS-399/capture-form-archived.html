@@ -54,20 +54,13 @@ text: "Sign out"
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Given name
+                Name
                 </dt>
                 <dd class="govuk-summary-list__value">
-               Mary
+               Mary Smith
                 </dd>
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Family name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 Smith
-                </dd>
-              </div>
+              
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Country trained in
@@ -131,24 +124,44 @@ text: "Sign out"
 
 
       <h2 class="govuk-heading-m govuk-!-padding-top-6">Update record</h2>
-            <div id="teachable-subject-container-1"
+      <div id="teachable-subject-container-1"
                     class="govuk-form-group">
                 <label class="govuk-label" for="teachable-subject-1">
-                    Given name </label> <input class="govuk-input"
+                    Name </label> <input class="govuk-input"
                     id="teachable-subject-1"
                     name="teachable-subject-1"
                     value="{{ data['teachable-subject-1'] }}"
                     type="text">
             </div>
-            <div id="teachable-subject-container-2"
-                    class="govuk-form-group">
-                <label class="govuk-label" for="teachable-subject-2">
-                    Family name </label> <input class="govuk-input"
-                    id="teachable-subject-2"
-                    name="teachable-subject-2"
-                    value="{{ data['teachable-subject-2'] }}"
-                    type="text">
-            </div>
+
+            <div id="teachable-subject-container-1"
+            class="govuk-form-group">
+        <label class="govuk-label" for="teachable-subject-1">
+            Alias </label> <input class="govuk-input"
+            id="teachable-subject-1"
+            name="teachable-subject-1"
+            value="{{ data['teachable-subject-1'] }}"
+            type="text">
+    </div>
+
+    <div data-module="moj-add-another">
+      <form method="post">
+    <div class="moj-button-action">
+
+
+      <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+        Add another alias
+      </button>
+
+      
+
+      </div>
+
+
+    </div>
+    </form>
+
+
             <div id="teachable-subject-container-3"
                     class="govuk-form-group">
                 <label class="govuk-label" for="teachable-subject-3">
@@ -204,6 +217,15 @@ text: "Sign out"
                 type="text">
         </div>
               
+
+        <div data-module="moj-add-another govuk-body">
+          <form method="post">
+        <div class="moj-button-action">
+
+
+          <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+            Add another application number
+          </button>
 
 
         <div class="govuk-form-group">
