@@ -66,11 +66,20 @@ text: "Sign out"
                   Alias
                 </dt>
                 <dd class="govuk-summary-list__value">
-               Maria Smith
+             Maria Smith
                 </dd>
               </div>
 
-              
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Email address
+                </dt>
+                <dd class="govuk-summary-list__value">
+               msmith@gmail.com
+                </dd>
+              </div>
+
+
               
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -112,148 +121,172 @@ text: "Sign out"
                   Deemed unsuitable by referee email and subsequent suitability panel.
                 </dd>
               </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Date added
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  12 June 2024
+                </dd>
+              </div>
             </dl>
 
 
 
       <h2 class="govuk-heading-m govuk-!-padding-top-6">Update record</h2>
-            <div id="teachable-subject-container-1"
-                    class="govuk-form-group">
-                <label class="govuk-label" for="teachable-subject-1">
-                    Name </label> <input class="govuk-input"
-                    id="teachable-subject-1"
-                    name="teachable-subject-1"
-                    value="{{ data['teachable-subject-1'] }}"
-                    type="text">
-            </div>
 
-            <div id="teachable-subject-container-1"
-                    class="govuk-form-group">
-                <label class="govuk-label" for="teachable-subject-1">
-                    Alias </label> <input class="govuk-input"
-                    id="teachable-subject-1"
-                    name="teachable-subject-1"
-                    value="{{ data['teachable-subject-1'] }}"
-                    type="text">
-            </div>
-            <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">Remove alias</button>
+      <div id="teachable-subject-container-1"
+      class="govuk-form-group govuk-!-margin-bottom-7">
+  <label class="govuk-label" for="teachable-subject-1">
+      Name </label> <input class="govuk-input"
+      id="teachable-subject-1"
+      name="teachable-subject-1"
+      value="Mary Smith"
+      type="text">
+</div>
 
-            <div id="teachable-subject-container-1"
-                    class="govuk-form-group">
-                <label class="govuk-label" for="teachable-subject-1">
-                    Alias </label> <input class="govuk-input"
-                    id="teachable-subject-1"
-                    name="teachable-subject-1"
-                    value="{{ data['teachable-subject-1'] }}"
-                    type="text">
-            </div>
-            <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">Remove alias</button>
+<div id="teachable-subject-container-1"
+      class="govuk-form-group  govuk-!-margin-bottom-2">
+  <label class="govuk-label" for="teachable-subject-1">
+      Alias </label> <input class="govuk-input"
+      id="teachable-subject-1"
+      name="teachable-subject-1"
+      value="Maria Smith"
+      type="text">
+</div>
 
-            <div data-module="moj-add-another">
-              <form method="post">
-            <div class="moj-button-action">
+<div data-module="moj-add-another">
+  <form method="post">
+  <div class="moj-button-action">
+  <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
+    Remove alias
+  </button>
+  </div>
+  </div>
+  </form>
+
+  <div data-module="moj-add-another">
+    <form method="post">
+    <div class="moj-button-action">
+    <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
+      Add another alias
+    </button>
+    </div>
+    </div>
+    </form>
+
+<div id="teachable-subject-container-1"
+class="govuk-form-group">
+<label class="govuk-label" for="teachable-subject-1">
+Email address </label> 
+<input class="govuk-input"
+id="teachable-subject-1"
+name="teachable-subject-1"
+value="msmith@gmail.com"
+type="text">
+</div>
+
+<div data-module="moj-add-another">
+<form method="post">
+<div class="moj-button-action">
 
 
-              <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-                Add another alias
-              </button>
+<button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
+Add another email address
+</button>
 
-              
-  
-              </div>
-        
-        
-            </div>
-            </form>
+
+
+</div>
+
+
+</div>
+</form>
+
+
+
+<div id="teachable-subject-container-3"
+      class="govuk-form-group govuk-!-margin-bottom-7">
+  <label class="govuk-label" for="teachable-subject-3">
+     Country trained in </label> <input class="govuk-input"
+      id="teachable-subject-3"
+      name="teachable-subject-3"
+      value="Ghana"
+      type="text">
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-7">
+  <legend class="govuk-fieldset__legend ">
+      <h3 class="govuk-fieldset__heading">
+        Date of birth
+      </h3>
+    </legend>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric" value="13">
         </div>
-           
-            <div id="teachable-subject-container-3"
-                    class="govuk-form-group">
-                <label class="govuk-label" for="teachable-subject-3">
-                   Country trained in </label> <input class="govuk-input"
-                    id="teachable-subject-3"
-                    name="teachable-subject-3"
-                    value="{{ data['teachable-subject-3'] }}"
-                    type="text">
-            </div>
-
-            <div class="govuk-form-group">
-                <legend class="govuk-fieldset__legend ">
-                    <h3 class="govuk-fieldset__heading">
-                      Date of birth
-                    </h3>
-                  </legend>
-                  <div class="govuk-date-input" id="passport-issued">
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                          Day
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                          Month
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                          Year
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-            </div>
-
-                <div id="teachable-subject-container-5"
-                class="govuk-form-group">
-            <label class="govuk-label" for="teachable-subject-3">
-             Application number (optional) </label> <input class="govuk-input"
-                id="teachable-subject-5"
-                name="teachable-subject-5"
-                value="{{ data['teachable-subject-5'] }}"
-                type="text">
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric" value="06">
         </div>
-
-        <div data-module="moj-add-another">
-          <form method="post">
-        <div class="moj-button-action">
-
-
-          <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-            Add another application number
-          </button>
-
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric" value="1990">
         </div>
-        </form>
-        </div>
-       
+      </div>
+    </div>
+  </fieldset>
+</div>
 
-              
+  <div id="teachable-subject-container-5" 
+  class="govuk-form-group">
+<label class="govuk-label" for="teachable-subject-3">
+Application number (optional) </label> <input class="govuk-input"
+  id="teachable-subject-5"
+  name="teachable-subject-5"
+  value="0000561"
+  type="text">
+</div>
 
-        
+<div data-module="moj-add-another govuk-body">
+<form method="post">
+<div class="moj-button-action">
 
 
-        <div class="govuk-form-group govuk-!-padding-top-3">
-          <h3 class="govuk-label-wrapper">
-            <label class="govuk-label ovuk-fieldset__heading">
-              Suitability reasons
-            </label>
-          </h3>
-          <div id="more-detail-hint" class="govuk-body">
-            Internal note: Briefly explain why this suitability record has been created.
-          </div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
-        </div>
-        
-  
+<button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
+Add another application number
+</button>
+
+
+
+</div>
+
+
+<div class="govuk-form-group">
+<h3 class="govuk-label-wrapper">
+<label class="govuk-label ovuk-fieldset__heading">
+Suitability reasons
+</label>
+</h3>
+<div id="more-detail-hint" class="govuk-body">
+Internal note: Briefly explain why this suitability record has been created.
+</div>
+<textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint">Deemed unsuitable by referee email and subsequent suitability panel.</textarea>
+</div>
+
 
     
 

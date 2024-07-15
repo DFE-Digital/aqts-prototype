@@ -63,6 +63,15 @@ text: "Sign out"
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
+                  Alias
+                </dt>
+                <dd class="govuk-summary-list__value">
+             Maria Smith
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                   Email address
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -133,17 +142,17 @@ text: "Sign out"
       Name </label> <input class="govuk-input"
       id="teachable-subject-1"
       name="teachable-subject-1"
-      value="{{ data['teachable-subject-1'] }}"
+      value="Mary Smith"
       type="text">
 </div>
 
 <div id="teachable-subject-container-1"
-      class="govuk-form-group">
+      class="govuk-form-group govuk-!-margin-bottom-2">
   <label class="govuk-label" for="teachable-subject-1">
       Alias </label> <input class="govuk-input"
       id="teachable-subject-1"
       name="teachable-subject-1"
-      value="{{ data['teachable-subject-1'] }}"
+      value="Maria Smith"
       type="text">
 </div>
 
@@ -152,11 +161,9 @@ text: "Sign out"
 <div class="moj-button-action">
 
 
-<button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
-  Add another alias
+<button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-5" data-module="govuk-button">
+  Remove alias
 </button>
-
-
 
 </div>
 
@@ -164,14 +171,45 @@ text: "Sign out"
 </div>
 </form>
 
+<div id="teachable-subject-container-1"
+      class="govuk-form-group  govuk-!-margin-bottom-2">
+  <label class="govuk-label" for="teachable-subject-1">
+      Alias </label> <input class="govuk-input"
+      id="teachable-subject-1"
+      name="teachable-subject-1"
+      value=""
+      type="text">
+</div>
+
+<div data-module="moj-add-another">
+  <form method="post">
+  <div class="moj-button-action">
+  <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
+    Remove alias
+  </button>
+  </div>
+  </div>
+  </form>
+
+<div data-module="moj-add-another">
+<form method="post">
+<div class="moj-button-action">
+<button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
+  Add another alias
+</button>
+</div>
+</div>
+</form>
+
 
 <div id="teachable-subject-container-1"
 class="govuk-form-group">
 <label class="govuk-label" for="teachable-subject-1">
-Email address </label> <input class="govuk-input"
+Email address </label> 
+<input class="govuk-input"
 id="teachable-subject-1"
 name="teachable-subject-1"
-value="{{ data['teachable-subject-1'] }}"
+value="msmith@gmail.com"
 type="text">
 </div>
 
@@ -200,7 +238,7 @@ Add another email address
      Country trained in </label> <input class="govuk-input"
       id="teachable-subject-3"
       name="teachable-subject-3"
-      value="{{ data['teachable-subject-3'] }}"
+      value="Ghana"
       type="text">
 </div>
 
@@ -216,7 +254,7 @@ Add another email address
           <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
             Day
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric" value="13">
         </div>
       </div>
       <div class="govuk-date-input__item">
@@ -224,7 +262,7 @@ Add another email address
           <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric" value="06">
         </div>
       </div>
       <div class="govuk-date-input__item">
@@ -232,7 +270,7 @@ Add another email address
           <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
             Year
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric" value="1990">
         </div>
       </div>
     </div>
@@ -245,7 +283,7 @@ Add another email address
 Application number (optional) </label> <input class="govuk-input"
   id="teachable-subject-5"
   name="teachable-subject-5"
-  value="{{ data['teachable-subject-5'] }}"
+  value="0000561"
   type="text">
 </div>
 
@@ -272,7 +310,7 @@ Suitability reasons
 <div id="more-detail-hint" class="govuk-body">
 Internal note: Briefly explain why this suitability record has been created.
 </div>
-<textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
+<textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint">Deemed unsuitable by referee email and subsequent suitability panel.</textarea>
 </div>
 
 

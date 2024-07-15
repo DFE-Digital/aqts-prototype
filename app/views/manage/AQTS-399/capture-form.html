@@ -47,12 +47,12 @@ text: "Sign out"
     <div class="govuk-grid-column-two-thirds">
 
         <div class="govuk-form-group">
-            <h1 class="govuk-heading-l">Suitability record</h1>
+            <h1 class="govuk-heading-l">Add suitability record</h1>
            
            
            
             <div id="teachable-subject-container-1"
-                    class="govuk-form-group">
+                    class="govuk-form-group govuk-!-margin-bottom-7">
                 <label class="govuk-label" for="teachable-subject-1">
                     Name </label> <input class="govuk-input"
                     id="teachable-subject-1"
@@ -76,7 +76,7 @@ text: "Sign out"
             <div class="moj-button-action">
 
 
-              <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+              <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
                 Add another alias
               </button>
 
@@ -88,8 +88,38 @@ text: "Sign out"
             </div>
             </form>
             
+
+            <div id="teachable-subject-container-1"
+            class="govuk-form-group">
+        <label class="govuk-label" for="teachable-subject-1">
+            Email address </label> <input class="govuk-input"
+            id="teachable-subject-1"
+            name="teachable-subject-1"
+            value="{{ data['teachable-subject-1'] }}"
+            type="text">
+    </div>
+
+    <div data-module="moj-add-another">
+      <form method="post">
+    <div class="moj-button-action">
+
+
+      <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
+        Add another email address
+      </button>
+
+      
+
+      </div>
+
+
+    </div>
+    </form>
+    
+
+
             <div id="teachable-subject-container-3"
-                    class="govuk-form-group">
+                    class="govuk-form-group govuk-!-margin-bottom-7">
                 <label class="govuk-label" for="teachable-subject-3">
                    Country trained in </label> <input class="govuk-input"
                     id="teachable-subject-3"
@@ -98,7 +128,7 @@ text: "Sign out"
                     type="text">
             </div>
 
-            <div class="govuk-form-group">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <legend class="govuk-fieldset__legend ">
                     <h3 class="govuk-fieldset__heading">
                       Date of birth
@@ -133,7 +163,7 @@ text: "Sign out"
                 </fieldset>
             </div>
 
-                <div id="teachable-subject-container-5"
+                <div id="teachable-subject-container-5" 
                 class="govuk-form-group">
             <label class="govuk-label" for="teachable-subject-3">
              Application number (optional) </label> <input class="govuk-input"
@@ -148,7 +178,7 @@ text: "Sign out"
         <div class="moj-button-action">
 
 
-          <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+          <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
             Add another application number
           </button>
 
