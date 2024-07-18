@@ -17,7 +17,7 @@ text: "Search",
 active: false
 },
 {
-href: "#2",
+href: "#2", 
 text: "Suitability records",
 active: true
 },
@@ -64,7 +64,7 @@ text: "Sign out"
             <div id="teachable-subject-container-1"
                     class="govuk-form-group">
                 <label class="govuk-label" for="teachable-subject-1">
-                    Alias </label> <input class="govuk-input"
+                    Alias (optional)</label> <input class="govuk-input"
                     id="teachable-subject-1"
                     name="teachable-subject-1"
                     value="{{ data['teachable-subject-1'] }}"
@@ -166,7 +166,7 @@ text: "Sign out"
                 <div id="teachable-subject-container-5" 
                 class="govuk-form-group">
             <label class="govuk-label" for="teachable-subject-3">
-             Application number (optional) </label> <input class="govuk-input"
+              Application reference (optional) </label> <input class="govuk-input"
                 id="teachable-subject-5"
                 name="teachable-subject-5"
                 value="{{ data['teachable-subject-5'] }}"
@@ -179,7 +179,7 @@ text: "Sign out"
 
 
           <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-7" data-module="govuk-button">
-            Add another application number
+            Add another application reference
           </button>
 
           
@@ -194,7 +194,7 @@ text: "Sign out"
             </label>
           </h3>
           <div id="more-detail-hint" class="govuk-body">
-            Internal note: Briefly explain why this suitability record has been created.
+            Internal note: Briefly explain why you have created this suitability record.
           </div>
           <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="8" aria-describedby="more-detail-hint"></textarea>
         </div>
