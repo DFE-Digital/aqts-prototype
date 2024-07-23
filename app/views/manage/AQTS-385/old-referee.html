@@ -1,0 +1,43 @@
+// Set default state variable value
+{% set requirePreassessment = true %}
+
+
+
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Apply for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+
+{
+
+}
+]
+}) }}
+{% endblock %}
+
+
+
+        
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Apply for qualified teacher status (QTS) in England</h1>
+
+    <p class="govuk-body">
+      We no longer need you to act as a reference.
+    </p>
+           
+    <p class="govuk-body">
+      You do not need to do anything else. 
+    </p>  
+           
+        
+       
+</div>
+{% endblock %}
