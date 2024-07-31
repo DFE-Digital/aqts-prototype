@@ -1,0 +1,318 @@
+// Set default state variable value
+{% set requirePreassessment = true %}
+
+
+
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list",
+text: "Search",
+active: false
+},
+{
+href: "#2",
+text: "Suitability records"
+},
+{
+    href: "#3",
+    text: "Support console"
+    },
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+<a class="govuk-back-link"
+        href="javascript:window.history.back()">Back</a>
+        
+{% endblock %}
+        
+        
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">View reference</h1>
+           
+           
+           
+            {{ govukSummaryList({
+              rows: [
+                {
+                  key: {
+                    text: "Name of institution"
+                  },
+                  value: {
+                    text: "Ironston Grade School"
+                  }
+                },
+                {
+                  key: {
+                    text: "Number of months"
+                  },
+                  value: {
+                    text: "12"
+                  }
+                },
+                {
+                  key: {
+                    text: "Number of months"
+                  },
+                  value: {
+                    text: "12"
+                  },
+                  
+                
+                  key: {
+                    text: "Name of reference"
+                  },
+                  value: {
+                    text: "Arthur Henderson"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "date of birth"
+                      }
+                    ]
+                  }
+                },
+                
+                {
+                  key: {
+                    text: "Job title of reference"
+                  },
+                  value: {
+                    text: "Head teacher"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "job title"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Email address of reference"
+                  },
+                  value: {
+                    text: "a.henderson@ironston.org"
+                  },
+                  actions: {
+                    items: [
+
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "contact details"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+           
+            <details class="govuk-details govuk-!-padding-top-3">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show reference history
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Name of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Michael Smith
+                    </dd>
+                    
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Job title of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     Principal
+                    </dd>
+                   
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Email address of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     m.smith@ironston.org
+                    </dd>
+                    
+                  </div>
+                  <div class="govuk-summary-list__row" style="border-bottom:0px;">
+                    <dt class="govuk-summary-list__key">
+                      Date reference changed
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     
+                      <p class="govuk-body">1 July 2024</p>
+                    </dd>
+                  </div>
+                  
+                </dl>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="border-bottom: 3px solid #b1b4b6!important;">
+
+
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Name of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Lionel Durgan
+                    </dd>
+                    
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Job title of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     Hospitality Producer
+                    </dd>
+                   
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Email address of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      l.durgan@ironston.org
+                    </dd>
+                    
+                  </div>
+                  <div class="govuk-summary-list__row" style="border-bottom:0px;">
+                    <dt class="govuk-summary-list__key">
+                      Date reference changed
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     
+                      <p class="govuk-body">14 June 2024</p>
+                    </dd>
+                  </div>
+                  
+                </dl>
+
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="border-bottom: 3px solid #b1b4b6!important;">
+
+
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Name of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Billy J. Carr
+                    </dd>
+                    
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Job title of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    Science Department Lead
+                    </dd>
+                   
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Email address of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      billyjamescarr@ironston.org
+                    </dd>
+                    
+                  </div>
+                  <div class="govuk-summary-list__row" style="border-bottom:0px;">
+                    <dt class="govuk-summary-list__key">
+                      Date reference changed
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     
+                      <p class="govuk-body">12 May 2024</p>
+                    </dd>
+                  </div>
+                  
+                </dl>
+
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="border-bottom: 3px solid #b1b4b6!important;">
+
+
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Name of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Cristina Ortega
+                    </dd>
+                    
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Job title of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    Vice Principal
+                    </dd>
+                   
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Email address of reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     c.ortega@ironston.org
+                    </dd>
+                    
+                  </div>
+                  <div class="govuk-summary-list__row" style="border-bottom:0px;">
+                    <dt class="govuk-summary-list__key">
+                      Date reference changed
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                     
+                      <p class="govuk-body">1 April 2024</p>
+                    </dd>
+                  </div>
+                  
+                </dl>
+
+            </details>
+    
+       
+</div>
+{% endblock %}
