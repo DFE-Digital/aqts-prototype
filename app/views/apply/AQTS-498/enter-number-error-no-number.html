@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		{{ govukErrorSummary({
+			titleText: "There is a problem",
+			errorList: [
+			  {
+				text: "Enter your teacher license number",
+				href: "#"
+			  }
+			]
+		  }) }}
+
+		<h1 class="govuk-heading-l">Enter your teacher license number</h1>
+
+		<p class="govuk-body">Your teacher license number is made up of 2 letters, 6 numbers, and a final 4 numbers. For example, PT/123456/1234.</p>
+		
+		
+		<div class="govuk-form-group govuk-form-group--error">
+			<p id="full-name-input-error" class="govuk-error-message">
+				<span class="govuk-visually-hidden">Error:</span> Enter your teacher license number
+			  </p>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="license-number">
+				 
+				 
+				  <div class="govuk-date-input" id="license-number">
+					<div class="govuk-date-input__item">
+					  <div class="govuk-form-group">
+						
+						<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="license-number-1" name="license-number-1" type="text" inputmode="numeric" value="">
+					  </div>
+					</div>
+					
+					<div class="govuk-date-input__item">
+					  <div class="govuk-form-group">
+				
+						<input class="govuk-input govuk-date-input__input govuk-input--width-5" id="license-number-2" name="license-number-2" type="text" inputmode="numeric">
+					  </div>
+					</div>
+					<div class="govuk-date-input__item">
+					  <div class="govuk-form-group">
+		
+						<input class="govuk-input govuk-date-input__input govuk-input--width-3" id="license-number-3" name="license-number-3" type="text" inputmode="numeric">
+					  </div>
+					</div>
+				  </div>
+				</fieldset>
+			  </div>
+			  </div>
+
+			  <div class="govuk-!-padding-bottom-3"></div>
+		<h2 class="govuk-heading-m">Finding and checking your teacher license number</h2>
+		<p class="govuk-body">You can get your teacher license number by signing in to your <a href="https://tpg.ntc.gov.gh/account/login/teacher">Teacher Portal Ghana account</a>.</p>
+		<p class="govuk-body">You can check your number on the <a href="https://tpg.ntc.gov.gh/public/teacher/verify-license">Teacher Portal Ghana website</a>. 		</p>
+		<p class="govuk-body">If you cannot find your teaching license number, contact the <a href="https://ntc.gov.gh/">Ghana National Teaching Council</a>. </p>
+		
+
+		<div class="govuk-!-padding-bottom-3"></div>
+		<h2 class="govuk-heading-m">Why we need your teacher license number </h2>
+
+		<p class="govuk-body">
+			We use this number to verify you are registered to teach in Ghana.  
+
+If you do not have one, we will not be able to verify you. This means your application will be declined. We do not accept other registration or license numbers. 
+		</p>
+		
+				<div class="govuk-!-padding-bottom-3"></div>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+				        name="another-identification" value="progress">
+					Save and come back later
+				</button>
+
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
