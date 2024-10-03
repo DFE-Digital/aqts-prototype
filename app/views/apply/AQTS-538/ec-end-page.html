@@ -1,0 +1,317 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">You're eligible to apply for qualified teacher status (QTS)</h1>
+		
+		<p>
+			Based on the information you’ve given us you can apply for QTS.
+		
+		</p>
+		
+		<h2 class="govuk-heading-m">Preparing to apply</h2>
+		
+		<p>If you decide to apply, you’ll need to provide a range of evidence. We’ll ask you to upload some scans, photos, or
+			original files.</p>
+		<div class="govuk-inset-text">
+			<p>You’ll need to complete your application within 6 months of starting it. You can start straight away, or you can
+				spend some time gathering the documents you need first.</p>
+		
+			<p>Once you begin, we’ll sign you out if you’re inactive for 60 minutes.</p>
+		</div>
+		
+		<h2 class="govuk-heading-m">Application timelines</h2>
+		
+		<p>
+			Your teaching qualifications and experience will be assessed against strict requirements. These requirements are
+			mandatory and must be met in full. The process is designed to ensure we only award QTS to the highest quality
+			teachers. This means it can take time.</p>
+		
+		<p>
+			We assess 90 per cent of applications within 12 months.
+		</p>
+		
+		<p>
+			Information correct as of July 2024. Timelines are based on total applications completed since February 2023.
+		</p>
+
+		<p>
+			It may take longer if we need to ask for further information or if external factors, or third parties, cause delays.
+			This includes waiting for references, or verification of qualifications or professional standing. The time it takes to
+			assess applications is regularly reviewed and subject to change.
+		</p>
+
+		<h2 class="govuk-heading-m">What we'll ask for</h2>
+
+		<p>You’ll need to provide the following evidence when you apply.</p>
+
+		<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+			<div class="govuk-accordion__section">
+			  <div class="govuk-accordion__section-header">
+				<h2 class="govuk-accordion__section-heading">
+				  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+					Proof of identity
+				  </span>
+				</h2>
+			  </div>
+			  <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+				<p class="govuk-body">
+					You must provide one of the following:
+				</p>
+					<ul class="govuk-list govuk-list--bullet">
+					<li>passport (must not have expired)</li>
+					<li>birth certificate</li>
+					<li>national identity card that shows your date of birth and nationality (must not have expired)</li>
+					</ul>
+
+					<details class="govuk-details">
+						<summary class="govuk-details__summary">
+						  <span class="govuk-details__summary-text">
+							Has your name changed?
+						  </span>
+						</summary>
+						<div class="govuk-details__text">
+							If the name on your proof of identity is different from that on your other documents, you need to provide evidence of your name change (for example, a marriage certificate or name change deed).
+						</div>
+					  </details>
+			  </div>
+			</div>
+			<div class="govuk-accordion__section">
+			  <div class="govuk-accordion__section-header">
+				<h2 class="govuk-accordion__section-heading">
+				  <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+					Proof of qualifications
+				  </span>
+				</h2>
+			  </div>
+
+			  <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+				<p class="govuk-body">
+					You must hold a teaching qualification that’s equivalent to a UK ‘level 6’ or higher.	
+				</p>
+
+				<p>
+					<a href="///">Check you hold a qualification that’s equivalent to or higher than a level 6</a>
+				</p>
+
+				<p>
+					If that qualification is equivalent to level 6, but it is <b>not</b> a bachelor’s degree, you must also be able to provide evidence that you hold a separate bachelor’s degree.
+				</p>
+
+				<p>
+					We’ll need to understand the level to which your qualifications were focused on developing practical teaching skills.
+				</p>
+
+				<p>
+					For any qualifications you submit, you’ll need to provide:
+				</p>
+
+				<ul class="govuk-list govuk-list--bullet"></ul>
+					<li>a certificate</li>
+					<li>a transcript (or diploma supplement)</li>
+					</ul>
+
+					<details class="govuk-details">
+						<summary class="govuk-details__summary">
+						  <span class="govuk-details__summary-text">
+							What is a transcript?
+						  </span>
+						</summary>
+						<div class="govuk-details__text">
+							A transcript is a document from the institution where you studied. It lists all the modules or subjects you studied in each year, and the marks or grades you were awarded. Note that you must have completed all of your teaching qualification in Germany.
+						</div>
+					  </details>
+			  </div>
+			</div>
+
+			<div class="govuk-accordion__section">
+			  <div class="govuk-accordion__section-header">
+				<h2 class="govuk-accordion__section-heading">
+				  <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+					Proof of English language ability
+				  </span>
+				</h2>
+			  </div>
+			  <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+				<p class="govuk-body">
+					There are 4 ways to prove your English language ability.
+				</p>
+
+		
+				<h3 class="govuk-heading-s">1. Born in or have citizenship of an exempt country</h3>
+				<p>
+					If you were born in or hold citizenship of any of these listed countries, you’re exempt from English language requirements:
+				</p>
+
+				<ul class="govuk-list govuk-list--bullet" style="column-count:2">
+				<li>Antigua and Barbuda</li>
+				<li>Australia</li>
+				<li>The Bahamas</li>
+				<li>Barbados</li>
+				<li>Belize</li>
+				<li>Canada</li>
+				<li>Dominica</li>
+				<li>Grenada</li>
+				<li>Guyana</li>
+				<li>Ireland</li>
+				<li>Jamaica</li>
+				<li>Malta</li>
+				<li>New Zealand</li>
+				<li>St Kitts and Nevis</li>
+				<li>St Lucia</li>
+				<li>St Vincent and the Grenadines</li>
+				<li>Trinidad and Tobago</li>
+				<li>USA</li>
+				</ul>
+
+				<p>
+					Qualified teachers from Great Britain, Northern Ireland, Jersey and Guernsey are also exempt.
+				</p>
+
+				<p>
+					You’ll need to provide your passport or official identification documents for that country as proof.
+				</p>
+
+				<p>
+					If you’re not exempt by birth or citizenship, you must be able to provide evidence of your English language ability in one of the following ways:
+				</p>
+
+				<h3 class="govuk-heading-s">2. If you studied in an exempt country</h3>
+
+				<p>
+					Upload the transcript from your teaching qualification or university degree (which you can request from the institution where you studied). Check the exempt countries listed in ‘Born in or have citizenship of an exempt country’.
+				</p>
+
+				<h3 class="govuk-heading-s">3. If you studied in a country that’s NOT exempt</h3>
+
+				<p>
+					If your teaching qualification or university degree was taught exclusively in the English language you can upload an official document, which is sometimes called a Medium of Instruction (MOI).
+				</p>
+
+				<p>
+					You can request this from the institution where you studied. It must be signed and stamped by them on official headed paper and it must state that the medium of instruction was English. It must also include your name, degree title and award date.
+				</p>
+
+				<h3 class="govuk-heading-s">4. Provide an approved English language certificate</h3>
+
+				<p>
+					If you cannot provide one of the documents described in 1,2 or 3, you'll need a <a href="///">B2 level (opens in new tab)</a> Secure English Language Test (SELT) from on approved provider. We accept the following approved providers and tests:
+				</p>
+
+				<ul class="govuk-list govuk-list--bullet">
+				<li><b>IELTS SELT Consortium</b>: ‘International English Language Testing System (IELTS) for UK Visa and Immigration (UKVI)’ or ‘International English Language Testing System (IELTS) Life Skills'​</li>
+				<li><b>LanguageCert</b>: ‘LanguageCert International English for speakers of other languages (ESOL) SELT’</li>
+				<li><b>Pearson</b>: ‘Pearson Test of English (PTE) Academic UK Visa and Immigration (UKVI)’ or ‘Pearson Test of English (PTE) Home’</li>
+				<li><b>PSI Services (UK) Ltd</b>: 'Skills for English UK Visa and Immigration (UKVI)’</li>
+				<li><b>Trinity College London</b>: ’Secure English Language Test (SELT) for UK Visa and Immigration (UKVI)’ - Integrated Skills in English (ISE) or Graded Examinations in Spoken English (GESE)</li>
+				</ul>
+
+				<p>
+					The test must be awarded within the last 2 years before the date of your application.
+				</p>
+
+				<p>
+					Find an <a href="////">approved provider</a> if you need to get an English language certificate.
+				</p>
+
+				<details class="govuk-details">
+					<summary class="govuk-details__summary">
+					  <span class="govuk-details__summary-text">
+						What if you have more than one nationality?
+					  </span>
+					</summary>
+					<div class="govuk-details__text">
+						If you’re a national of more than 1 country and both are exempt from English language requirements, you can choose which of them you use to apply for QTS. Remember, you must be able to show a passport (or the recognised identity document for that country).
+						<br><br>
+						If you hold a second nationality that is not exempt (and you apply for QTS using that nationality) you’ll need to prove your English language proficiency using one of the other methods.
+					</div>
+				  </details>
+			  </div>
+			</div>
+
+
+			<div class="govuk-accordion__section">
+			  <div class="govuk-accordion__section-header">
+				<h2 class="govuk-accordion__section-heading">
+				  <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+					Proof that you’re recognised as a teacher
+				  </span>
+				</h2>
+			  </div>
+			  <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+				<p class="govuk-body"></p>
+			  </div>
+			</div>
+	
+
+
+		  <div class="govuk-accordion__section">
+			<div class="govuk-accordion__section-header">
+			  <h2 class="govuk-accordion__section-heading">
+				<span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+				Proof of work history
+				</span>
+			  </h2>
+			</div>
+			<div id="accordion-default-content-5" class="govuk-accordion__section-content">
+			  <p class="govuk-body"></p>
+			</div>
+		  </div>
+	
+
+		<div class="govuk-accordion__section">
+			<div class="govuk-accordion__section-header">
+			  <h2 class="govuk-accordion__section-heading">
+				<span class="govuk-accordion__section-button" id="accordion-default-heading-6">
+				Certified translations
+				</span>
+			  </h2>
+			</div>
+			<div id="accordion-default-content-6" class="govuk-accordion__section-content">
+			  <p class="govuk-body"></p>
+			</div>
+		  </div>
+		</div>
+
+		<p>
+			You’ll need a GOV.UK One Login to use this service. You can create one if you do not already have one.
+		</p>
+
+		<a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+			Apply for QTS
+			<svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+			  <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+			</svg>
+		  </a>
+
+		  <p>Find out more about <a href="https://www.gov.uk/using-your-gov-uk-one-login">using a GOV.UK One Login</a>.</p>
+
+		
+		  <h2 class="govuk-heading-m">Help us to improve this service</h2>
+
+		  <p>
+			We’re always looking for ways to improve the apply for QTS service. If you’d like to share your experiences, please complete this <a href="///">feedback form (opens in new tab)</a>.
+		  </p>
+		
+	
+
+			
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

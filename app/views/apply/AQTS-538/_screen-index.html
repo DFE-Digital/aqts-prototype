@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+AQTS-498 - Ghana registration numbers
+  </h1>
+
+  <p><a href="https://lucid.app/lucidspark/037a5a80-4f91-4875-981d-6911d9a02b37/edit?viewport_loc=-2669%2C-2733%2C24289%2C11816%2C0_0&invitationId=inv_828df3b2-7a8b-456a-9e74-56a3204db3ea">Lucid board (design exploration)</a></p>
+         
+  <table class="govuk-table">
+    
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+       
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Link</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          
+          <p><a href="enter-number">Enter registration number (v1)</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+            Completely redesign screen with stylised input fields.
+          </p>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          
+          <p><a href="enter-number-v2">Enter registration number (v2)</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+         Updated content, single input field
+          </p>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          
+          <p><a href="enter-number-error">Error: incomplete information (v1)</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+            Showing the error message when the number has not been entered in full (styled inputs)
+          </p>
+        </td>
+      </tr>
+    
+
+       
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            
+            <p><a href="enter-number-error-no-number">Error: no number entered (v1)</a></p>
+            
+          </td>
+          <td class="govuk-table__cell">
+            <p>
+              Showing the error message when the number has not been entered at all (styled inputs)
+            </p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            
+            <p><a href="enter-number-v2-error">Error: incomplete information (v2)</a></p>
+            
+          </td>
+          <td class="govuk-table__cell">
+            <p>
+              Showing the error message when the number has not been entered in full (single input field)
+            </p>
+          </td>
+        </tr>
+      
+  
+         
+      
+     
+      
+    </tbody>
+  </table>
+
+{% endblock %}
