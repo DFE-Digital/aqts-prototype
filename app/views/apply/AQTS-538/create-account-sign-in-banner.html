@@ -4,6 +4,23 @@
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Apply for Qualified Teacher Status",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "create-account-sign-in",
+text: "Version 1",
+active: false
+
+}
+]
+}) }}
+{% endblock %}
+
+
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
@@ -12,7 +29,7 @@
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-
+		<form class="form" action="/oli-select-banner" method="post">
 		<h1 class="govuk-heading-l">Check your eligibility to apply for qualified teacher status (QTS) in England</h1>
 
 		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -38,8 +55,8 @@
 			<fieldset class="govuk-fieldset">
 			  <div class="govuk-radios" data-module="govuk-radios">
 				<div class="govuk-radios__item">
-				  <input class="govuk-radios__input" id="signin" name="signin" type="radio" value="Yes">
-				  <label class="govuk-label govuk-radios__label" for="signin">
+				  <input class="govuk-radios__input" id="signinB" name="signinB" type="radio" value="Yes">
+				  <label class="govuk-label govuk-radios__label" for="signinB">
 					Yes, continue application
 				  </label>
 				  <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
@@ -47,8 +64,8 @@
 				  </div>
 				</div>
 				<div class="govuk-radios__item">
-				  <input class="govuk-radios__input" id="signin-2" name="signin" type="radio" value="No">
-				  <label class="govuk-label govuk-radios__label" for="signin-2">
+				  <input class="govuk-radios__input" id="signinB-2" name="signinB" type="radio" value="No">
+				  <label class="govuk-label govuk-radios__label" for="signinB-2">
 					No, I need to check if I can apply
 				  </label>
 				</div>

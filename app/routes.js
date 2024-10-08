@@ -45,3 +45,40 @@ const router = govukPrototypeKit.requests.setupRouter()
             response.redirect("apply/AQTS-240/v2/task-list-error")
         }
     })
+
+
+     // Has OLI yes or no hint text version
+     router.post('/oli-select', function(request, response) {
+
+        var signin = request.session.data['signin']
+        if (signin == "Yes"){
+            response.redirect("apply/AQTS-538/oli/oli-start")
+        } 
+         else {
+            response.redirect("apply/AQTS-538/pause")
+        }
+    })
+
+    // Has OLI yes or no banner version
+    router.post('/oli-select-banner', function(request, response) {
+
+        var signinB = request.session.data['signinB']
+        if (signinB == "Yes"){
+            response.redirect("apply/AQTS-538/oli/oli-start")
+        } 
+         else {
+            response.redirect("apply/AQTS-538/pause")
+        }
+    })
+
+     // OLI security codes method
+     router.post('/oli-security-code', function(request, response) {
+
+        var securityMethod = request.session.data['choose-security-codes']
+        if (securityMethod == "Text message"){
+            response.redirect("apply/AQTS-538/oli/create-account/enter-phone-number")
+        } 
+         else {
+            response.redirect("apply/AQTS-538/oli/create-account/auth-app")
+        }
+    })
