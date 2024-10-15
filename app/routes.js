@@ -82,3 +82,27 @@ const router = govukPrototypeKit.requests.setupRouter()
             response.redirect("apply/AQTS-538/oli/create-account/auth-app")
         }
     })
+
+       // OLI security codes - changing type
+       router.post('/choose-security-code-answer', function(request, response) {
+
+        var securityMethod = request.session.data['choose-security-codes']
+        if (securityMethod == "Text message"){
+            response.redirect("apply/AQTS-538/oli/sign-in/change-security-codes/enter-phone-number")
+        } 
+         else {
+            response.redirect("apply/AQTS-538/oli/sign-in/change-security-codes/auth-app")
+        }
+    })
+
+     // OLI security codes method change again
+     router.post('/oli-security-code-change', function(request, response) {
+
+        var securityMethod = request.session.data['choose-security-codes']
+        if (securityMethod == "Text message"){
+            response.redirect("apply/AQTS-538/oli/sign-in/change-security-codes/enter-phone-number")
+        } 
+         else {
+            response.redirect("apply/AQTS-538/oli/sign-in/change-security-codes/auth-app")
+        }
+    })
