@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+		
+			<span class="govuk-caption-l">
+			  About you
+			</span>
+				<h1 class="govuk-heading-l">
+					Check your answers
+				</h1>
+
+				<div class="govuk-summary-card">
+					<div class="govuk-summary-card__title-wrapper">
+					  <h2 class="govuk-summary-card__title">
+						Personal information
+					  </h2>
+					</div>
+					<div class="govuk-summary-card__content">
+					  <dl class="govuk-summary-list">
+						<div class="govuk-summary-list__row">
+						  <dt class="govuk-summary-list__key">
+							Given names
+						  </dt>
+						  <dd class="govuk-summary-list__value">
+							{{ data['first-name'] or "Mary" }}
+						  </dd>
+						  <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+						  </dd>
+						</div>
+						<div class="govuk-summary-list__row">
+						  <dt class="govuk-summary-list__key">
+							Surname
+						  </dt>
+						  <dd class="govuk-summary-list__value">
+							{{ data['last-name'] or "Smith" }}
+						  </dd>
+						  <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+						  </dd>
+						</div>
+
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Date of birth
+							</dt>
+							<dd class="govuk-summary-list__value">
+								<span>{{ data['dob-day'] or "12" }} </span> / <span>{{ data['dob-month'] or "03" }} </span> / <span>{{ data['dob-year'] or "1990" }}</span>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+							  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+							</dd>
+						  </div>
+
+						  <div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Name appears differently on your passport or qualifications?
+							</dt>
+							<dd class="govuk-summary-list__value">
+								{{ data['current-legal-name'] or "No" }}
+							</dd>
+							<dd class="govuk-summary-list__actions">
+							  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+							</dd>
+						  </div>
+
+						  {% if data['current-legal-name'] == "Yes" %}
+						  <div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Alternate given name
+							</dt>
+							<dd class="govuk-summary-list__value">
+								{{ data['current-legal-name'] }}
+							</dd>
+							<dd class="govuk-summary-list__actions">
+							  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+							</dd>
+						  </div>
+
+						  <div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Alternate given name
+							</dt>
+							<dd class="govuk-summary-list__value">
+								{{ data['alternate-last-name'] }}
+							</dd>
+							<dd class="govuk-summary-list__actions">
+							  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+							</dd>
+						  </div>
+						  {% endif %}
+					  </dl>
+					</div>
+		</div>
+		<form action="../task-list" method="post" novalidate>
+			<button class="govuk-button" name="completed-personal-details" value="completed-personal-details"
+			        data-module="govuk-button">
+				Continue
+			</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

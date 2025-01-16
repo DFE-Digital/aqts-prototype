@@ -1,0 +1,269 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Apply for qualified teacher status (QTS) in England",
+serviceUrl: "start.html",
+navigation: [
+{
+href: "signed-out",
+text: "Sign out",
+active: false
+}
+]
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-xl">
+			Apply for qualified teacher status (QTS)
+		</h1>
+
+		<h2 class="govuk-heading-s govuk-!-margin-bottom-2">
+			Application incomplete
+		</h2>
+
+		<p class="govuk-body govuk-!-margin-bottom-7">
+			You have completed 0 of 5 sections.
+		  </p>
+			
+		  <div class="govuk-inset-text">
+			<p class="govuk-body">
+			  You started this application on 7 August 2024.
+			  Applications must be completed within 6 months, so you’ll need to complete it before 7 February 2025.
+			</p>
+		  </div>
+
+
+		<h2 class="app-task-list__section">
+			About you
+		</h2>
+		  <ul class="govuk-task-list">
+
+			<li class="govuk-task-list__item govuk-task-list__item--with-link">
+			  <div class="govuk-task-list__name-and-hint">
+				
+				<a class="govuk-link govuk-task-list__link" href="personal-information/name-and-dob" aria-describedby="personal-information">
+					Enter your personal information
+                </a>
+			</div>
+						
+			  	<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="another-identification-status">
+				Not started
+				</strong>
+				
+			</li>
+
+			<li class="govuk-task-list__item govuk-task-list__item--with-link">
+				
+				<div class="govuk-task-list__name-and-hint">
+				  <a class="govuk-link govuk-task-list__link" href="personal-documents/passport-details" aria-describedby="upload-passport">
+					Upload your passport
+				  </a>
+				</div>
+			
+						{% if data['another-identification'] == "No" %}
+						<strong class="govuk-tag app-task-list__tag"
+						        id="another-identification-status">Completed</strong>
+						{% elseif data['another-identification'] == "Yes" %}
+						<strong class="govuk-tag app-task-list__tag"
+						        id="another-identification-status">Completed</strong>
+						{% elseif data['another-identification'] == "progress" %}
+						<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="another-identification-status">In
+							progress</strong>
+						{% else %}
+						<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="another-identification-status">Not
+							started</strong>
+						{% endif %}
+					</li>
+			
+			</ul>
+			
+			
+			<h2 class="app-task-list__section">
+				Your qualifications
+			</h2>
+			
+			<ul class="govuk-task-list">
+
+					<li class="govuk-task-list__item govuk-task-list__item--with-link">
+					  <div class="govuk-task-list__name-and-hint">
+						
+						<a class="govuk-link govuk-task-list__link" href="qualifications/teacher-training-qualification/teacher-training-qualification" aria-describedby="teacher-training-qualification">
+							Add your teaching qualifications
+						</a>
+					</div>
+					 
+						{% if data['completed-qualification-details'] %}
+						<strong class="govuk-tag app-task-list__tag" id="qualification-status">Completed</strong>
+						{% elseif data['progress-qualification-details'] %}
+						<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="qualification-status">In
+							progress</strong>
+						{% else %}
+						<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="qualification-status">Not
+							started</strong>
+						{% endif %}
+					
+					</li>
+
+					<li class="govuk-task-list__item govuk-task-list__item--with-link">
+						<div class="govuk-task-list__name-and-hint">
+						  
+						  <a class="govuk-link govuk-task-list__link" href="who-you-can-teach/age-range" aria-describedby="age-range">
+							Enter the age range you can teach
+						  </a>
+						</div>
+						  {% if data['completed-qualification-details'] %}
+						  <strong class="govuk-tag app-task-list__tag" id="qualification-status">Completed</strong>
+						  {% elseif data['progress-qualification-details'] %}
+						  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="qualification-status">In
+							  progress</strong>
+						  {% else %}
+						  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="qualification-status">Not
+							  started</strong>
+						  {% endif %}
+					
+					  </li>
+
+
+					  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+						<div class="govuk-task-list__name-and-hint">
+						  
+						  <a class="govuk-link govuk-task-list__link" href="who-you-can-teach/subjects" aria-describedby="subjects">
+							Enter the subjects you can teach
+						  </a>
+						</div>
+						  {% if data['completed-qualification-details'] %}
+						  <strong class="govuk-tag app-task-list__tag" id="qualification-status">Completed</strong>
+						  {% elseif data['progress-qualification-details'] %}
+						  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="qualification-status">In
+							  progress</strong>
+						  {% else %}
+						  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="qualification-status">Not
+							  started</strong>
+						  {% endif %}
+				
+					  </li>
+
+			</ul>
+		
+
+			<h2 class="app-task-list__section">
+				Your English language proficiency
+			</h2>
+			
+			<ul class="govuk-task-list">
+
+					<li class="govuk-task-list__item govuk-task-list__item--with-link">
+					  <div class="govuk-task-list__name-and-hint">
+						
+						<a class="govuk-link govuk-task-list__link" href="english-language-proficiency/question-born-citizenship" aria-describedby="verify-english-proficiency">
+							Verify your English language proficiency
+						</a>
+					</div>
+						{% if data['completed-qualification-details'] %}
+						<strong class="govuk-tag app-task-list__tag" id="qualification-status">Completed</strong>
+						{% elseif data['progress-qualification-details'] %}
+						<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="qualification-status">In
+							progress</strong>
+						{% else %}
+						<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="qualification-status">Not
+							started</strong>
+						{% endif %}
+			
+					</li>
+				</ul>
+		
+
+				<h2 class="app-task-list__section">
+					Your work history
+				</h2>
+				
+				<ul class="govuk-task-list">
+	
+						<li class="govuk-task-list__item govuk-task-list__item--with-link">
+						  <div class="govuk-task-list__name-and-hint">
+							
+							<a class="govuk-link govuk-task-list__link" href="work-history/work-history-in-education-1" aria-describedby="work-history">
+								Add your work history
+							</a>
+						</div>
+						<!-- Changed to just check if value exists  -->
+						{% if data['completed-work-history'] %}
+						<strong class="govuk-tag app-task-list__tag" id="work-history-status">Completed</strong>
+						{% elseif data['have-work-history'] == "no" %}
+						<strong class="govuk-tag app-task-list__tag" id="work-history-status">Completed</strong>
+						{% elseif data['completed-work-history'] == "no" %}
+						<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="work-history-status">In
+							progress</strong>
+						{% else %}
+						<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="work-history-status">Not
+							started</strong>
+						{% endif %}
+					
+					</li>
+				</ul>
+	
+				<h2 class="app-task-list__section">
+					Proof that you’re recognised as a teacher
+				</h2>
+				
+				<ul class="govuk-task-list">
+	
+						<li class="govuk-task-list__item govuk-task-list__item--with-link">
+						  <div class="govuk-task-list__name-and-hint">
+							
+							<a class="govuk-link govuk-task-list__link" href="professional-standing/question-reference-number" aria-describedby="reference-number">
+								Add your work history
+							</a>
+						</div>
+						{% if data['completed-reference-number'] %}
+						<strong class="govuk-tag app-task-list__tag" id="reference-number-status">Completed</strong>
+						{% else %}
+						<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reference-number-status">Not
+							started</strong>
+						{% endif %}
+				
+						</li>
+
+						<li class="govuk-task-list__item govuk-task-list__item--with-link">
+							<div class="govuk-task-list__name-and-hint">
+							  
+							  <a class="govuk-link govuk-task-list__link" href="professional-standing/upload-lops" aria-describedby="professional-standing">
+								Upload your written statement
+							  </a>
+						  </div>
+						  {% if data['completed-professional-standing'] %}
+						<strong class="govuk-tag app-task-list__tag" id="written-statement-status">Completed</strong>
+						{% elseif data['completed-professional-standing'] == "no" %}
+						<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="written-statement-status">In
+							progress</strong>
+						{% else %}
+						<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="written-statement-status">Not
+							started</strong>
+						{% endif %}
+				  
+						  </li>
+					
+					
+				</ul>
+		
+
+			<div class="govuk-button-group">
+				<!-- <a class="govuk-button" href="application-check-submission">Check your application</a> -->
+				<a class="govuk-button govuk-button--secondary" href="signed-out">Save and sign out</a>
+			</div>
+
+		</ul>
+	</div>
+</div>
+
+{% endblock %}

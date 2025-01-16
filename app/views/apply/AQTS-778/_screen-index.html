@@ -1,0 +1,237 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+AQTS-778 - Passports prototype build
+  </h1>
+
+  <p><a href="https://lucid.app/lucidspark/59b2f825-007d-43ac-85b0-2fa36e200370/edit?viewport_loc=59150%2C-4715%2C36118%2C17570%2C0_0&invitationId=inv_f44321a4-088a-468b-80e5-ac5bc410a406" target="_blank">Lucid board: screen index in collaboration with CD</a></p>
+   
+  
+  <p>
+    Quick links
+    <br>
+    <a href="_screen-index.html#personal-info">Personal information task</a>
+    <br>
+    <a href="_screen-index.html#upload-passport">Upload passport task</a>
+  </p>
+
+
+  <div id="personal-info" name="personal-info">
+  <h2 class="govuk-heading-m">Personal information</h2>
+  <table class="govuk-table">
+    
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+       
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Link</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          
+          <p><a href="task-list">Task list (start page)</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+          The existing screen. The user flow begins at the task list. No tasks have been completed.
+          </p>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          
+          <p><a href="personal-information/name-and-dob">Personal info: Name & DOB</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+            Updated content to change ID to passport.
+          </p>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          
+          <p><a href="personal-information/question-current-legal-name">Personal info: name change</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+
+          <p>
+          Updated content to change ID to passport.
+          </p>
+         
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          
+          <p><a href="personal-information/upload-name-change1">Upload name change document</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+           The existing screen.
+          </p>
+        </td>
+      </tr>
+    
+
+       
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="personal-information/check-files-name-change">Name change file upload summary</a></p>  
+          </td>
+          <td class="govuk-table__cell">
+            <p>
+              The existing screen
+             </p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            
+            <p><a href="personal-information/upload-name-change2">Name change upload next page</a></p>
+            
+          </td>
+          <td class="govuk-table__cell">
+            <p>
+             The existing screen
+            </p>
+          </td>
+        </tr>
+      
+  
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            
+            <p><a href="personal-information/personal-information-summary">Personal info summary</a></p>
+            
+          </td>
+          <td class="govuk-table__cell">
+            <p>
+             Updated content to change ID to passport.
+            </p>
+          </td>
+        </tr>
+      
+     
+      
+    </tbody>
+  </table>
+  </div>
+
+  <div id="upload-passport" name="upload-passport"></div>
+  <h2 class="govuk-heading-m">Upload your passport</h2>
+  <table class="govuk-table">
+    
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+       
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Link</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          
+          <p><a href="personal-documents/passport-details">Your passport details</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+          New screen. Passport expiry date entry.
+          </p>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          
+          <p><a href="personal-documents/upload-passport">Upload your passport</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+            New screen. Passport upload.
+          </p>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          
+          <p><a href="personal-documents/check-files-passport">Passport file upload summary</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+
+          <p>
+          New screen. Using document upload pattern established on the service.
+          </p>
+         
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          
+          <p><a href="personal-documents/upload-another-page">Upload another page</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">
+          <p>
+          New screen. Content now reflects passport rather than ID.
+          </p>
+        </td>
+      </tr>
+    
+
+       
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="personal-documents/check-files-passport2">Passport file upload summary (2 files)</a></p>  
+          </td>
+          <td class="govuk-table__cell">
+            <p>
+              New screen.
+             </p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            
+            <p><a href="personal-documents/summary">Upload your passport summary</a></p>
+            
+          </td>
+          <td class="govuk-table__cell">
+            <p>
+            New screen.
+            </p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

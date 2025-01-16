@@ -106,3 +106,45 @@ const router = govukPrototypeKit.requests.setupRouter()
             response.redirect("apply/AQTS-538/oli/sign-in/change-security-codes/auth-app")
         }
     })
+
+
+    // Run this code when a form is submitted to 'current-legal-name'
+    router.post("/current-legal-name-answer", function (req, res) {
+    // Make a variable and give it the value from 'currentLegalNameAnswer'
+    var currentLegalNameAnswer = req.session.data["current-legal-name"];
+  
+    // Check whether the variable matches a condition
+    if (currentLegalNameAnswer == "Yes") {
+      // Send user to next page
+      res.redirect("apply/AQTS-778/personal-information/upload-name-change1");
+    } else {
+      // Send user to ineligible page
+      res.redirect(
+        "apply/AQTS-778/personal-information/personal-information-summary"
+      );
+    }
+  });
+
+         // Passports additional pages for name change
+         router.post('/passports-another-name-change', function(request, response) {
+
+            var securityMethod = request.session.data['another-name-change']
+            if (securityMethod == "Yes"){
+                response.redirect("apply/AQTS-778/personal-information/upload-name-change2")
+            } 
+             else {
+                response.redirect("apply/AQTS-778/personal-information/personal-information-summary")
+            }
+        })
+
+          // Passports additional passport documents page
+          router.post('/passports-another-passport-page', function(request, response) {
+
+            var securityMethod = request.session.data['another-passport-page']
+            if (securityMethod == "Yes"){
+                response.redirect("apply/AQTS-778/personal-documents/upload-another-page")
+            } 
+             else {
+                response.redirect("apply/AQTS-778/personal-documents/summary")
+            }
+        })

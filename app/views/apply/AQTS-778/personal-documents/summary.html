@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<span class="govuk-caption-l">
+			About you
+		  </span>
+			  <h1 class="govuk-heading-l">
+				  Check your answers
+			  </h1>
+		
+
+		<div class="govuk-summary-card">
+			<div class="govuk-summary-card__title-wrapper">
+			  <h2 class="govuk-summary-card__title">
+				Your passport details
+			  </h2>
+			</div>
+			<div class="govuk-summary-card__content">
+			  <dl class="govuk-summary-list">
+				<div class="govuk-summary-list__row">
+				  <dt class="govuk-summary-list__key">
+					Expiry date
+				  </dt>
+				  <dd class="govuk-summary-list__value">
+					12 December 2027
+				  </dd>
+				  <dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+				  </dd>
+				</div>
+				<div class="govuk-summary-list__row">
+				  <dt class="govuk-summary-list__key">
+					Passport
+				  </dt>
+				  <dd class="govuk-summary-list__value">
+					<a download href="/" class="govuk-link">passport.jpg</a>
+				  </dd>
+				  <dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+				  </dd>
+				
+			  </dl>
+			</div>
+			</div>
+		
+			<form action="../task-list" method="post" novalidate>
+				<button class="govuk-button" name="completed-personal-details" value="completed-personal-details"
+						data-module="govuk-button">
+					Continue
+				</button>
+			</form>
+		
+	
+
+	</div>
+</div>
+
+{% endblock %}

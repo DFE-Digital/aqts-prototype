@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Current legal name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="/current-legal-name-answer" method="post">
+
+        <span class="govuk-caption-l">
+          About you
+        </span>
+
+		<div class="govuk-form-group">
+			<fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+			  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+				<h1 class="govuk-fieldset__heading">
+				Does your name appear differently on your passport or qualifications?
+				</h1>
+			  </legend>
+			  <div id="contact-hint" class="govuk-hint">
+				If your name appears differently on your passport or qualifications you need to upload proof of your name change, for example, your marriage or civil partnership certificate.
+			  </div>
+			  <div class="govuk-radios" data-module="govuk-radios">
+
+				<div class="govuk-radios__item">
+				  <input class="govuk-radios__input" id="contact" name="current-legal-name" type="radio" value="Yes" data-aria-controls="conditional-contact">
+				  <label class="govuk-label govuk-radios__label" for="current-legal-name">
+					Yes – I’ll upload another document to prove this
+				  </label>
+				</div>
+				<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+				  <div class="govuk-form-group">
+					<label class="govuk-label" for="contact-by-email">
+					  Alternate given names
+					</label>
+					<input class="govuk-input" id="contact-by-email" name="alternate-first-name" type="text" spellcheck="false">
+				  </div>
+				
+					<div class="govuk-form-group">
+					  <label class="govuk-label" for="contact-by-email-2">
+						Alternate surname
+					  </label>
+					  <input class="govuk-input" id="contact-by-email-2" name="alternate-last-name" type="text" spellcheck="false">
+					</div>
+				  </div>
+
+
+				  <div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="current-legal-name-2" name="current-legal-name" type="radio" value="No">
+					<label class="govuk-label govuk-radios__label" for="current-legal-name-2">
+						No, my name does not appear differently
+					</label>
+				  </div>
+
+				</div>
+			</fieldset>
+		  </div>
+				
+				
+		
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				        name="progress-personal-details" value="progress-personal-details"
+				        formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
