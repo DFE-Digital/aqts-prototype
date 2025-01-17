@@ -41,8 +41,8 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 		<form class="form" action="upload-passport" method="post">
 			
 			{{ govukDateInput({
-				id: "passport-expiry",
-				namePrefix: "passport-expiry",
+				id: "passport",
+				namePrefix: "passport",
 				fieldset: {
 				legend: {
 				text: "Passport expiry date",
@@ -55,32 +55,34 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 				},
 				items: [
 				{
-				name: "day",
 				classes: "govuk-input--width-2",
-				value: data["passport-day"]
+				id: 'passport-day',
+				name: 'day',
+				value: data['passport-day']
 				},
 				{
-				name: "month",
+				id: 'passport-month',
 				classes: "govuk-input--width-2",
-				value: data["passport-month"]
+				name: 'month',
+				value: data['passport-month']
 				},
 				{
-				name: "year",
 				classes: "govuk-input--width-4",
-				value: data["passport-year"]
+				id: 'passport-year',
+				name: 'year',
+				value: data['passport-year']
 				}
 				]
 				}) }}
 
 
 				<div class="govuk-button-group">
-					<button class="govuk-button" data-module="govuk-button">
+					<button class="govuk-button" data-module="govuk-button" name="passport-details" value="completed">
 						Continue
 					</button>
 	
 					<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
-							name="progress-personal-details" value="progress-personal-details"
-							formaction="../task-list">
+					name="passport-details" value="in-progress" formaction="../task-list">
 						Save and come back later
 					</button>
 

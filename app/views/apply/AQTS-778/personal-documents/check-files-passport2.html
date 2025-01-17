@@ -78,7 +78,15 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 			]
 			}) }}
 
-			{{ govukButton({ text: 'Continue' }) }}
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				name="passport-details" value="in-progress" formaction="../task-list">
+					Save and come back later
+				</button>
 		</form>
 	</div>
 </div>

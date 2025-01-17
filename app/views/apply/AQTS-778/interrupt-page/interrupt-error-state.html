@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+			<form class="form" action="/passports-interrupt" method="post">
+			
+				{{ govukErrorSummary({
+					titleText: "There is a problem",
+					errorList: [
+					  {
+						text: "Select whether you made an error or need to renew your passport.",
+						href: "#"
+					  }
+					]
+				  }) }}
+				</div>
+
+	<div class="govuk-grid-column-full">
+		<div class="moj-interruption-card">
+			<div class="moj-interruption-card__content">
+
+			
+				
+			<h1 class="govuk-heading-l moj-interruption-card__heading">
+				Your passport has expired
+			</h1>
+			
+				<div class="govuk-body-l moj-interruption-card__body">
+					<p>The passport expiry date you entered is in the past. We can only accept valid passports to verify your identity.					</p>
+					<p>If you made an error, you can update the expiry date. The assessor will verify the expiry date against the passport file you upload.</p>
+					<p>If your passport has expired, you need to renew it. You can still complete the other sections of your application during this time. You must complete your QTS application by 24 July 2025.					</p>
+					<p>Select what you need to do:</p>
+			 	</div>
+			  
+				
+
+					<div class="govuk-form-group">
+					
+						<fieldset class="govuk-fieldset">
+						  <div class="govuk-radios govuk-body-l" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+							  <input class="govuk-radios__input" id="interrupt" name="interrupt" type="radio" value="Update">
+							  <label class="govuk-label--interrupt govuk-radios__label" for="interrupt">
+								I made an error, I need to update the expiry date
+							  </label>
+							</div>
+							<div class="govuk-radios__item">
+							  <input class="govuk-radios__input" id="interrupt-2" name="interrupt" type="radio" value="Expired">
+							  <label class="govuk-label--interrupt govuk-radios__label" for="interrupt-2">
+								I will complete other sections of my application whilst I renew my passport
+							  </label>
+							</div>
+							</div>
+						</fieldset>
+					
+					</div>
+		  		
+					<button class="govuk-button govuk-button--inverse" data-module="govuk-button" >
+					Continue
+				</button>
+					
+		  
+				</form>
+	
+			  	</div>
+			</div>
+		</div>
+		  
+				
+
+	</div>
+</div>
+
+{% endblock %}

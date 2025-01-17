@@ -33,7 +33,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 					Expiry date
 				  </dt>
 				  <dd class="govuk-summary-list__value">
-					12 December 2027
+					<span>{{ data['passport-day'] or "12" }} </span> / <span>{{ data['passport-month'] or "12" }} </span> / <span>{{ data['passport-year'] or "2027" }}</span>
 				  </dd>
 				  <dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
@@ -55,7 +55,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 			</div>
 		
 			<form action="../task-list" method="post" novalidate>
-				<button class="govuk-button" name="completed-personal-details" value="completed-personal-details"
+				<button class="govuk-button" name="passport-details" value="completed"
 						data-module="govuk-button">
 					Continue
 				</button>

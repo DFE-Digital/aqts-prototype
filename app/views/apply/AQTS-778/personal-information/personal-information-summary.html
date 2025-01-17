@@ -43,7 +43,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 							Surname
 						  </dt>
 						  <dd class="govuk-summary-list__value">
-							{{ data['last-name'] or "Smith" }}
+							{{ data['surname'] or "Smith" }}
 						  </dd>
 						  <dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
@@ -80,7 +80,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 								Alternate given name
 							</dt>
 							<dd class="govuk-summary-list__value">
-								{{ data['current-legal-name'] }}
+								{{ data['alternate-first-name'] }}
 							</dd>
 							<dd class="govuk-summary-list__actions">
 							  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>

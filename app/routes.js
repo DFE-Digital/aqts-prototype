@@ -128,8 +128,8 @@ const router = govukPrototypeKit.requests.setupRouter()
          // Passports additional pages for name change
          router.post('/passports-another-name-change', function(request, response) {
 
-            var securityMethod = request.session.data['another-name-change']
-            if (securityMethod == "Yes"){
+            var additionalName = request.session.data['another-name-change']
+            if (additionalName == "Yes"){
                 response.redirect("apply/AQTS-778/personal-information/upload-name-change2")
             } 
              else {
@@ -140,11 +140,42 @@ const router = govukPrototypeKit.requests.setupRouter()
           // Passports additional passport documents page
           router.post('/passports-another-passport-page', function(request, response) {
 
-            var securityMethod = request.session.data['another-passport-page']
-            if (securityMethod == "Yes"){
+            var additionalPage = request.session.data['another-passport-page']
+            if (additionalPage == "Yes"){
                 response.redirect("apply/AQTS-778/personal-documents/upload-another-page")
             } 
              else {
                 response.redirect("apply/AQTS-778/personal-documents/summary")
             }
         })
+
+          // Passports interrupt page routing
+          router.post('/passports-interrupt', function(request, response) {
+
+            var interruptPage = request.session.data['interrupt']
+            if (interruptPage == "Update"){
+                response.redirect("apply/AQTS-778/personal-documents/passport-details")
+            } 
+            else if 
+                (interruptPage == "Expired"){
+                    response.redirect("apply/AQTS-778/task-list")
+            }
+             else {
+                response.redirect("apply/AQTS-778/interrupt-page/interrupt-error-state")
+            }
+        })
+
+
+    // Passport status update
+    router.post("/question-current-legal-name-answer", function (req, res) {
+    // Make a variable and give it the value from 'anotherTtq'
+    var otherName = req.session.data["another-identification"];
+  
+    // Check whether the variable matches a condition
+    if (anotherIdentification == "Yes") {
+      res.redirect("/prototype-3/personal-documents/upload-identification-b");
+    } else {
+      res.redirect("/prototype-3/task-list");
+    }
+  });
+  

@@ -48,3 +48,76 @@
     border-color: #c42b2b;
     background-color: #f3dede;
     }
+
+
+    .moj-interruption-card {
+        background-color: #1d70b8;
+        margin-bottom: 15px;
+        padding: 20px;
+        border: 5px solid rgba(0,0,0,0)
+    }
+    
+    @media(min-width: 40.0625em) {
+        .moj-interruption-card {
+            padding:35px
+        }
+    }
+    
+    .moj-interruption-card__content {
+        max-width: 66%
+    }
+    
+    .moj-interruption-card__heading,.moj-interruption-card__body {
+        color: #fff
+    }
+    
+    .moj-interruption-card__body>* {
+        font-size: 1.125rem;
+        line-height: 1.1111111111;
+        color: #fff
+    }
+    
+    @media(min-width: 40.0625em) {
+        .moj-interruption-card__body>* {
+            font-size:1.5rem;
+            line-height: 1.25
+        }
+    }
+    
+    @media print {
+        .moj-interruption-card__body>* {
+            font-size: 18pt;
+            line-height: 1.15
+        }
+    }
+    
+    .moj-interruption-card__body:last-child {
+        margin-bottom: 0
+    }
+    
+    .moj-interruption-card__actions:last-child {
+        margin-bottom: 0
+    }
+    
+    .moj-interruption-card__actions:last-child .govuk-button:last-child,.moj-interruption-card__actions:last-child .govuk-link:last-child {
+        margin-bottom: 0
+    }
+    
+    @media(min-width: 40.0625em) {
+        .moj-interruption-card__actions:last-child .govuk-button,.moj-interruption-card__actions:last-child .govuk-link {
+            margin-bottom:0
+        }
+    }
+
+    .govuk-label--interrupt {
+        font-family: "GDS Transport", arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size:inherit;
+        line-height: 1.25;
+        color: #ffffff;
+        display: block;
+        margin-bottom: 2px;
+        padding: 7px 15px;
+    }

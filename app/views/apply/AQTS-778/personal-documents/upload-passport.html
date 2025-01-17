@@ -12,6 +12,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="check-files-passport" method="post">
 
 		<h1 class="govuk-heading-l">Upload your passport</h1>
 
@@ -35,7 +36,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 			You do not need to upload every page of your passport.
 		</p>
 
-		<form class="form" action="check-files-passport" method="post">
+		
 			<div class="govuk-form-group govuk-!-padding-top-2">
 				<label class="govuk-label" for="file-upload-1">
 					Select a file to upload
@@ -47,16 +48,17 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 					<input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
 				  </div>
 			</div>
+			
+			
 			<div class="govuk-button-group">
 				<button class="govuk-button" data-module="govuk-button">
-				Continue
+					Continue
 				</button>
 
-				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
-				        name="another-identification" value="progress">
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				name="passport-details" value="in-progress" formaction="../task-list">
 					Save and come back later
 				</button>
-
 			</div>
 
 		</form>
