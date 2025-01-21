@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		{{ govukErrorSummary({
+			titleText: "There is a problem",
+			errorList: [
+			  {
+				text: "The passport expiry date must be in the future.",
+				href: "passport-details-error.html#passport-date-input"
+			  }
+			]
+		  }) }}
+		<span class="govuk-caption-l">
+			About you
+		  </span>
+		<h1 class="govuk-heading-l">Your passport details</h1>
+
+
+		<p class="govuk-body">
+			We can only accept valid passports to verify your identity. You cannot apply for QTS with an expired passport.
+		</p>
+		<p class="govuk-body">
+			If your passport has expired, you can still complete the other sections of your application whilst you renew it. 
+		</p>
+
+		<p class="govuk-body">
+			If your passport expires whilst your QTS application is being assessed, your application will still be considered.
+		</p>
+
+
+
+		{{ govukWarningText({
+			text: "If you submit your application with an expired passport, your application will be declined. ",
+			iconFallbackText: "Warning"
+		  }) }}
+
+
+		
+		<form class="form" action="upload-passport" method="post">
+			<div id="passport-date-input" name="passport-date-input">
+			{{ govukDateInput({
+				id: "passport",
+				namePrefix: "passport",
+				fieldset: {
+				legend: {
+				text: "Passport expiry date",
+				isPageHeading: false,
+				classes: "govuk-label govuk-label--m"
+				}
+				},
+				hint: {
+				text: "For example, 27 3 2007"
+				},
+				errorMessage: {
+					text: "The passport expiry date must be in the future."
+				},
+				items: [
+				{
+				classes: "govuk-input--width-2 govuk-input--error",
+				id: 'passport-day',
+				name: 'day',
+				value: data['passport-day']
+				},
+				{
+				id: 'passport-month',
+				classes: "govuk-input--width-2 govuk-input--error",
+				name: 'month',
+				value: data['passport-month']
+				},
+				{
+				classes: "govuk-input--width-4 govuk-input--error",
+				id: 'passport-year',
+				name: 'year',
+				value: data['passport-year']
+				}
+				]
+				}) }}
+				</div>
+
+				<div class="govuk-button-group">
+					<button class="govuk-button" data-module="govuk-button" name="passport-details" value="completed">
+						Continue
+					</button>
+	
+					<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+					name="passport-details" value="in-progress" formaction="../task-list">
+						Save and come back later
+					</button>
+
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
