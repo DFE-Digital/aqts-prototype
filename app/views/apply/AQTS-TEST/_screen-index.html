@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+AQTS-201 - Application Status
+  </h1>
+
+         
+  <table class="govuk-table">
+    
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+       
+        <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Date</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+       
+        <td class="govuk-table__cell">
+          <p>
+            The screen we show the applicant upon logging back into their application.
+          </p>
+          <p><a href="application-complete">Application complete (v1)</a></p>
+          
+        </td>
+        <td class="govuk-table__cell">March 2024</td>
+      </tr>
+      <tr class="govuk-table__row">
+        
+        <td class="govuk-table__cell">xxx
+        <br>
+        <br>
+        xxxx
+        </td>
+        <td class="govuk-table__cell">xxxx</td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}
